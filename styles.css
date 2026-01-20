@@ -244,7 +244,7 @@ body {
 /* IMAGE */
 .hero-image img {
   width: 280px;
-  border-radius: 50%;
+  border-radius: 100%;
   box-shadow: 0 0 70px rgba(110,168,255,0.35);
 }
 
