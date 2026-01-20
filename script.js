@@ -1,3 +1,15 @@
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = '0';
+  preloader.style.transition = 'opacity 5s ease';
+
+  setTimeout(() => {
+    preloader.style.display = 'none';
+  }, 500); // match transition duration
+});
+
+
 // Subtle parallax effect for background
 document.addEventListener("mousemove", (e) => {
   const x = e.clientX / window.innerWidth * 30;
