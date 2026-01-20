@@ -43,22 +43,16 @@
       <a href="#contact">Contact</a>
     </nav>
 
-   <!-- Hamburger Button -->
-<div class="hamburger" id="hamburger" data-aos="fade-up">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+ <button id="menuBtn" class="menu-btn">☰</button>
 
-<!-- Sidebar -->
-<nav class="sidebar" id="sidebar" data-aos="fade-up">
-  <ul>
-    <li><a href="#home" class="sidebar-link">Home</a></li>
-    <li><a href="#about" class="sidebar-link">About</a></li>
-    <li><a href="#portfolio" class="sidebar-link">Portfolio</a></li>
-    <li><a href="#contact" class="sidebar-link">Contact</a></li>
-  </ul>
+<nav id="sidebar" class="sidebar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Contact</a>
 </nav>
+
+<div id="overlay" class="overlay"></div>
 
 
   </header>
@@ -87,7 +81,7 @@
   </main>
 
   <section class="about" id="about">
-  <div class="about-container">
+  <div class="about-container" data-aos="zoom-in">
     <h2>What clients need to know</h2>
 
     <p class="about-intro">
@@ -97,22 +91,22 @@
     </p>
 
     <div class="about-points">
-      <div class="point">
+      <div class="point" data-aos="fade-up">
         <i class='bx bx-line-chart'></i>
         <span>Conversion-focused layouts, not just aesthetics</span>
       </div>
 
-      <div class="point">
+      <div class="point" data-aos="zoom-out">
         <i class='bx bx-mobile-alt'></i>
         <span>Mobile-first, responsive, and performance-optimized</span>
       </div>
 
-      <div class="point">
+      <div class="point" data-aos="fade-up">
         <i class='bx bx-buildings'></i>
         <span>Built for businesses, brands, and personal portfolios</span>
       </div>
 
-      <div class="point">
+      <div class="point" data-aos="flip-up">
         <i class='bx bx-layer'></i>
         <span>Clean structure that scales as your brand grows</span>
       </div>
@@ -121,13 +115,13 @@
 </section>
 
 <section class="skills" id="skills">
-  <div class="skills-container">
+  <div class="skills-container" data-aos="fade-up">
     <h2>Core skills</h2>
 
     <div class="skills-grid">
 
       <!-- Frontend -->
-      <div class="skill-card">
+      <div class="skill-card" data-aos="flip-down">
         <h3>Frontend Development</h3>
         <div class="skill-icons">
           <div><i class='bx bxl-html5'></i><span>HTML5</span></div>
@@ -137,7 +131,7 @@
       </div>
 
       <!-- Frameworks -->
-      <div class="skill-card">
+      <div class="skill-card" data-aos="zoom-out">
         <h3>Frameworks & Tools</h3>
         <div class="skill-icons">
           <div><i class='bx bxl-bootstrap'></i><span>Bootstrap</span></div>
@@ -147,7 +141,7 @@
       </div>
 
       <!-- Design -->
-      <div class="skill-card">
+      <div class="skill-card" data-aos="zoom-in">
         <h3>Design & UX</h3>
         <div class="skill-icons">
           <div><i class='bx bxl-figma'></i><span>Figma</span></div>
@@ -156,7 +150,7 @@
       </div>
 
       <!-- Performance -->
-      <div class="skill-card">
+      <div class="skill-card" data-aos="fade-up">
         <h3>Performance & SEO</h3>
         <div class="skill-icons">
           <div><i class='bx bx-search-alt'></i><span>SEO Fundamentals</span></div>
@@ -169,13 +163,14 @@
 </section>
 
 <section class="projects" id="projects">
-  <div class="projects-container">
+  <div class="projects-container" data-aos="fade-up">
     <h2>Selected projects</h2>
 
     <div class="projects-grid">
 
       <!-- Elite Interiors -->
       <article class="project-card">
+        <div data-aos="fade-up">
         <img src="elite.png" alt="Elite Interiors website" loading="lazy">
         <div class="project-content">
           <h3>Elite Interiors</h3>
@@ -185,10 +180,12 @@
           </p>
           <a href="https://eliteinteriors.netlify.app" target="_blank">View project →</a>
         </div>
+        </div>
       </article>
 
       <!-- Skinsho -->
       <article class="project-card">
+        <div data-aos="flip-down">
         <img src="skin.png" alt="Skinsho skincare website" loading="lazy">
         <div class="project-content">
           <h3>Skinsho</h3>
@@ -202,6 +199,7 @@
 
       <!-- Eatery -->
       <article class="project-card">
+        <div data-aos="zoom-out">
         <img src="eat.png" alt="Eatery website" loading="lazy">
         <div class="project-content">
           <h3>Eatery Website</h3>
@@ -211,10 +209,12 @@
           </p>
           <a href="https://savoria-eatery.netlify.app/" target="_blank">View project →</a>
         </div>
+        </div>
       </article>
 
       <!-- Ploutokos -->
       <article class="project-card">
+        <div data-aos="fade-up">
         <img src="ploutoko.png" alt="Ploutokos website" loading="lazy">
         <div class="project-content">
           <h3>Ploutokos</h3>
@@ -224,6 +224,7 @@
           </p>
           <a href="https://ploutokos.netlify.app/" target="_blank">View project →</a>
         </div>
+        </div>
       </article>
 
     </div>
@@ -231,7 +232,7 @@
 </section>
 
 <section class="contact" id="contact">
-  <div class="contact-container">
+  <div class="contact-container" data-aos="fade-up">
     <h2>Hire me</h2>
     <p class="contact-intro">
       Tell me about your project. I work with businesses, brands, and individuals
@@ -262,7 +263,7 @@
         </select>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" data-aos="fade-up">
         <label for="message">Project details</label>
         <textarea id="message" name="message" rows="5"
           placeholder="Briefly describe what you need" required></textarea>
@@ -277,12 +278,12 @@
 
 <!-- Contact Section -->
 <section id="socials" class="socials">
-  <div class="container" style="max-width:800px; margin:0 auto;">
+  <div class="container" style="max-width:800px; margin:0 auto;" data-aos="fade-up">
     <h2 style="font-size:2.8rem; margin-bottom:20px;">Connect With Me</h2>
     <p style="margin-bottom:50px; font-size:1.2rem;">Reach out through any of my social platforms. Let’s collaborate!</p>
 
     <!-- Glass Panel -->
-    <div class="glass-panel">
+    <div class="glass-panel" data-aos="fade-up">
       <a href="https://x.com/temmiebillions" target="_blank" class="social-icon">
         <i class='bx bxl-x'></i>
       </a>
@@ -307,7 +308,7 @@
 
 
 <section class="brand-statement">
-  <div class="brand-wrap">
+  <div class="brand-wrap" data-aos="fade-up">
     <img src="logo.jpg" alt="Temmie The Developer logo" class="brand-logo" loading="lazy">
 
     <h3>Temmie The Developer</h3>
