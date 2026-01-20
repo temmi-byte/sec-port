@@ -1,25 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 body {
-  color: #ffffff;
-  background: linear-gradient(
-    120deg,
-    #020617,
-    #0a1a3f,
-    #020617
-  );
-  background-size: 300% 300%;
-  animation: bgMove 12s ease-in-out infinite alternate;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+/* ===== Animated Background ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #1e90ff55, transparent 40%),
+    radial-gradient(circle at 80% 30%, #00bfff55, transparent 40%),
+    radial-gradient(circle at 50% 80%, #1e90ff55, transparent 40%),
+    linear-gradient(120deg, #020617, #020b2f);
+  animation: moveBg 15s infinite alternate;
+  z-index: -1;
 }
 
 @keyframes moveBg {
@@ -70,7 +74,9 @@ body {
   left: -250px; /* hidden by default */
   width: 250px;
   height: 100%;
-  background: #0D1B5A;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.04);
+  z-index: 10;
   color: white;
   padding-top: 60px;
   transition: 0.3s;
@@ -105,7 +111,9 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.04);
+  z-index: 10;
   transition: 0.3s;
   z-index: 900;
 }
@@ -148,9 +156,8 @@ body {
   left: -250px; /* hidden by default */
   width: 250px;
   height: 100%;
-  background: rgba(13, 27, 90, 0.7); /* semi-transparent dark blue */
-  backdrop-filter: blur(10px);       
-  color: rgb(28, 94, 238);
+   backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.04);
   padding-top: 60px;
   transition: 0.3s;
   z-index: 1000;
@@ -184,7 +191,8 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.04);
   transition: 0.3s;
   z-index: 900;
 }
@@ -661,7 +669,7 @@ body {
     transform: scale(1.2);
   }
 
-  .glass-pannel {
+  .glass-panel {
     display:flex;
      justify-content:center;
       gap:40px; 
@@ -674,9 +682,13 @@ body {
   }
 
   .socials {
-    background: #0a1a3f;
      padding: 100px 0; 
      text-align:center;
       color:white; 
       position:relative;
+  }
+
+  .glass-panel a {
+    color :#6ea8ff;
+    width: auto;
   }

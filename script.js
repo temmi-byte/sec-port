@@ -1,3 +1,11 @@
+// Subtle parallax effect for background
+document.addEventListener("mousemove", (e) => {
+  const x = e.clientX / window.innerWidth * 30;
+  const y = e.clientY / window.innerHeight * 30;
+
+  document.querySelector(".bg").style.transform =
+    `translate(${x}px, ${y}px)`;
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.getElementById('hamburger');
