@@ -647,12 +647,6 @@ body {
   gap: 2.5rem;
 }
 
-.footer-brand p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-top: 1rem;
-}
-
 .footer-logo {
   width: 48px;
 }

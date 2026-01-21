@@ -6,8 +6,8 @@
     "Web & Web3 experiences for modern brands"
   ];
 
-  const typingSpeed = 70;
-  const deletingSpeed = 40;
+  const typingSpeed = 40;
+  const deletingSpeed = 50;
   const delayBetween = 1500;
 
   const typingElement = document.getElementById("typing-text");
