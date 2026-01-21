@@ -1,8 +1,46 @@
 
+
+  const texts = [
+    "Designing conversion-ready websites",
+    "Websites that look credible and sell",
+    "Web & Web3 experiences for modern brands"
+  ];
+
+  const typingSpeed = 70;
+  const deletingSpeed = 40;
+  const delayBetween = 1500;
+
+  const typingElement = document.getElementById("typing-text");
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentText = texts[textIndex];
+
+    if (!isDeleting) {
+      typingElement.textContent = currentText.slice(0, charIndex++);
+      if (charIndex > currentText.length) {
+        setTimeout(() => isDeleting = true, delayBetween);
+      }
+    } else {
+      typingElement.textContent = currentText.slice(0, charIndex--);
+      if (charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+    }
+
+    setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+  }
+
+  typeEffect();
+
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
   preloader.style.opacity = '0';
-  preloader.style.transition = 'opacity 5s ease';
+  preloader.style.transition = 'opacity 3s ease';
 
   setTimeout(() => {
     preloader.style.display = 'none';

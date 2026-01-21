@@ -203,6 +203,24 @@ body {
   opacity: 0.7;
 }
 
+.hero-title {
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+  color: #4fc3f7; /* keep your blue */
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
 .hero-text h1 {
   font-size: 2.6rem;
   font-weight: 600;
@@ -243,10 +261,7 @@ body {
 
 /* IMAGE */
 .hero-image img {
-  width: 280px;
-  height: 250px;
-  border-radius: 50%;
-  box-shadow: 0 0 70px rgba(110,168,255,0.35);
+  width: 250px;
 }
 
 /* MOBILE */
@@ -559,6 +574,8 @@ body {
 .brand-statement {
   padding: 4.5rem 2rem;
   text-align: center;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.04);
 }
 
 .brand-wrap {
@@ -612,3 +629,79 @@ body {
     color :#6ea8ff;
     width: 50px;
   }
+
+  .site-footer {
+   background: rgba(11, 22, 88, 0.514); 
+       backdrop-filter: blur(12px); 
+       box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #cfd8dc;
+  padding: 4rem 1.5rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.footer-logo {
+  width: 48px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: #62c4ee;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #4fc3f7;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  font-size: 1.4rem;
+  color: #cfd8dc;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #4fc3f7;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}

@@ -9,7 +9,6 @@
 <meta property="og:title" content="Temmie The Developer- A Web design Brand" />
 <meta property="og:image" content="https://temmiethedev.netlify.app/logo.jpg" />
 <meta property="og:description" content="Temmie The Developer builds high-performance, modern websites that help brands and businesses stand out and convert users." />
-<meta name="description" content="Explore thought-provoking articles on life, purpose, creativity, and software engineering at Beyond Temmie." />
 <link rel="icon" href="https://temmiethedev.netlify.app/logo.jpg" type="image/jpg">
 
   <!-- Boxicons -->
@@ -36,16 +35,18 @@
   <header class="nav">
     <div class="brand">
      <div class="brand" data-aos="fade-up">
-  <img src="logo.jpg" alt="Temmie The Developer logo" class="logo-img" loading="lazy">
+  <img src="logo.png" alt="Temmie The Developer logo" class="logo-img" loading="lazy">
 </div>
 
       <span class="brand-name">Temmie The Developer</span>
     </div>
 
     <nav class="nav-links">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Portfolio</a>
       <a href="#contact">Contact</a>
+       <a href="#socials">Connect with us</a>
     </nav>
 
  <button id="menuBtn" class="menu-btn">☰</button>
@@ -55,6 +56,7 @@
   <a href="#about">About</a>
   <a href="#projects">Portfolio</a>
   <a href="#contact">Contact</a>
+  <a href="#socials">Connect with us</a>
 </nav>
 
 <div id="overlay" class="overlay"></div>
@@ -68,7 +70,11 @@
     <div class="hero-text" data-aos="fade-left">
       <span class="eyebrow">Temmie The Developer</span>
 
-      <h1>Designing conversion-ready websites</h1>
+      <h1 class="hero-title">
+  <span id="typing-text"></span>
+  <span class="cursor">|</span>
+</h1>
+
 
       <p>
         For businesses, brands, and personal portfolios that want to look credible,
@@ -76,25 +82,25 @@
       </p>
 
       <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Work</a>
-        <a href="#contact" class="btn ghost">Hire Me</a>
+        <a href="#projects" class="btn primary">View Our Work</a>
+        <a href="#contact" class="btn ghost">Get your projects done</a>
       </div>
     </div>
 
     <div class="hero-image">
-      <img src="pfp.png" alt="Temmie The Developer" loading="lazy">
+      <img src="logo.png" alt="Temmie The Developer" loading="lazy">
     </div>
   </main>
    </section>
 
   <section class="about" id="about">
   <div class="about-container" data-aos="zoom-in">
-    <h2>What clients need to know</h2>
+    <h2>What You Need To Know</h2>
 
     <p class="about-intro">
-      I design and build professional websites that help businesses, brands,
+      We design and build professional websites and web apps that help businesses, brands,
       and individuals communicate credibility, clarity, and value online.
-      Every project is structured with purpose — not just visuals.
+      Every project is structured with purpose, not just visuals.
     </p>
 
     <div class="about-points">
@@ -195,7 +201,7 @@
 
 <section class="projects" id="projects">
   <div class="projects-container" data-aos="fade-up">
-    <h2>Selected projects</h2>
+    <h2>Our Selected projects</h2>
 
     <div class="projects-grid">
 
@@ -250,8 +256,7 @@
         <div class="project-content">
           <h3>Ploutokos</h3>
           <p>
-            My startup website focused on wealth education, financial mindset,
-            and entrepreneurship — built to communicate vision and credibility.
+            A case study website for a wealth education platform focused on entrepreneurship, financial growth, and mindset transformation.
           </p>
           <a href="https://ploutokos.netlify.app/" target="_blank">View project →</a>
         </div>
@@ -264,9 +269,9 @@
 
 <section class="contact" id="contact">
   <div class="contact-container" data-aos="fade-up">
-    <h2>Hire me</h2>
+    <h2>Wanna Get Your Project Done?</h2>
     <p class="contact-intro">
-      Tell me about your project. I work with businesses, brands, and individuals
+      Tell us about your project. We work with businesses, brands, and individuals
       who need professional, conversion-ready websites.
     </p>
 
@@ -285,19 +290,36 @@
       </div>
 
       <div class="form-group">
+        <label for="hear-about">How did you hear about us?</label>
+        <select id="hear-about" name="hear-about">
+          <option>Referal</option>
+          <option>X</option>
+          <option>Instagram</option>
+          <option>Google search</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="project">Project type</label>
         <select id="project" name="project">
           <option>Business website</option>
           <option>Brand website</option>
           <option>Personal portfolio</option>
+          <option>Web3 landing page</option>
           <option>Other</option>
         </select>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">What is your budget?</label>
+        <input type="words" id="budget" name="budget" placeholder="Your budget please" required>
       </div>
 
       <div class="form-group" data-aos="fade-up">
         <label for="message">Project details</label>
         <textarea id="message" name="message" rows="5"
-          placeholder="Briefly describe what you need" required></textarea>
+          placeholder="Explain in detail what you need" required></textarea>
       </div>
 
       <button type="submit" class="btn-primary">
@@ -310,13 +332,13 @@
 <!-- Contact Section -->
 <section id="socials" class="socials">
   <div class="container" style="max-width:800px; margin:0 auto;" data-aos="fade-up">
-    <h2 style="font-size:2.8rem; margin-bottom:20px;">Connect With Me</h2>
-    <p style="margin-bottom:50px; font-size:1.2rem;">Reach out through any of my social platforms. Let’s collaborate!</p>
+    <h2 style="font-size:2.8rem; margin-bottom:20px;">Connect With Us</h2>
+    <p style="margin-bottom:50px; font-size:1.2rem;">Reach out through any of our social platforms. Let’s collaborate et work together!</p>
 
     <!-- Glass Panel -->
     <div class="glass-panel" data-aos="fade-up">
       <a href="https://x.com/temmiebillions" target="_blank" class="social-icon">
-        <i class='bx bxl-x'></i>
+        <i class='bx bxl-twitter'></i>
       </a>
       <a href=" https://www.linkedin.com/in/temmie-loluwa-ba2459286" target="_blank" class="social-icon">
         <i class='bx bxl-linkedin'></i>
@@ -340,18 +362,56 @@
 
 <section class="brand-statement">
   <div class="brand-wrap" data-aos="fade-up">
-    <img src="logo.jpg" alt="Temmie The Developer logo" class="brand-logo" loading="lazy">
+    <img src="logo.png" alt="Temmie The Developer logo" class="brand-logo" loading="lazy">
 
     <h3>Temmie The Developer</h3>
 
     <p>
-      Designing conversion-ready websites for businesses, brands,
-      and individuals who take their online presence seriously.
+      Designing conversion-ready websites and web apps for start-ups, businesses, brands, personal portfolios, and individuals that want to look credible and sell.
     </p>
   </div>
 </section>
 
+<footer class="site-footer">
+  <div class="footer-container" data-aos="zoom-in">
+
+    <!-- Navigation -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Core Skills</a></li>
+        <li><a href="#projects">Our Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <a href="#socials">Connect with us</a>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <a href="https://instagram.com/temmie.dev__" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+        <a href="https://x.com/temmiebillions" aria-label="X"><i class='bx bxl-twitter'></i></a>
+        <a href="https://github.com/temmi-byte" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+        <a href="mailto:falusipeace4@gmail.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Temmie The Developer. All rights reserved.</p>
+  </div>
+</footer>
+
+
 <script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({
