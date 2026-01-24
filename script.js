@@ -3,7 +3,7 @@
   const texts = [
     "Designing conversion-ready websites",
     "Websites that look credible and sell",
-    "Web & Web3 experiences for modern brands"
+    "Web2 & Web3 experiences for modern brands"
   ];
 
   const typingSpeed = 40;
