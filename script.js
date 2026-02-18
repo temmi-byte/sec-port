@@ -2,6 +2,7 @@
 
   const texts = [
     "Designing conversion-ready websites",
+    "Setup & maintainance of Google business profiles",
     "Websites that look credible and sell",
     "Web2 & Web3 experiences for modern brands"
   ];
