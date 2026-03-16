@@ -63,3 +63,34 @@ overlay.addEventListener("click", () => {
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
 });
+
+// Get the modal elements
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("fullImage");
+const captionText = document.getElementById("caption");
+const closeModal = document.querySelector(".close-modal");
+
+// Select all images in your project section
+// (Adjust the selector '.project-card img' to match your actual HTML class)
+const images = document.querySelectorAll(".project-card img");
+
+images.forEach(img => {
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        // Optional: Use the image's 'alt' text as a caption
+        captionText.innerHTML = this.alt;
+    }
+});
+
+// Close modal when clicking 'X'
+closeModal.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Close modal when clicking anywhere outside the image
+modal.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
