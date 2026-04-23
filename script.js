@@ -2,9 +2,9 @@
 
   const texts = [
     "Designing conversion-ready websites",
-    "Setup & maintainance of Google business profiles",
     "Websites that look credible and sell",
-    "Web2 & Web3 experiences for modern brands"
+    "Web2 & Web3 experiences",
+    "Setup & maintainance of Google business profiles"
   ];
 
   const typingSpeed = 40;
@@ -94,3 +94,33 @@ modal.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const dots = document.querySelectorAll(".dot");
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      dots[i].classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+  }
+
+  function autoSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentSlide = index;
+      showSlide(currentSlide);
+    });
+  });
+
+  setInterval(autoSlide, 4000);
