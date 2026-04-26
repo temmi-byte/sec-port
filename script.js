@@ -135,3 +135,16 @@ modal.onclick = function(event) {
       item.classList.toggle("active");
     });
   });
+
+  const btn = document.getElementById("viewMoreBtn");
+  const hiddenProjects = document.getElementById("hiddenProjects");
+
+  btn.addEventListener("click", () => {
+    if (hiddenProjects.style.display === "grid") {
+      hiddenProjects.style.display = "none";
+      btn.textContent = "View More Projects";
+    } else {
+      hiddenProjects.style.display = "grid";
+      btn.textContent = "Show Less";
+    }
+  });
