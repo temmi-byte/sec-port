@@ -106,84 +106,6 @@ body {
   z-index: 10;
 }
 
-/* Hamburger */
-.menu-btn {
-  position: fixed;
-  top: 20px;
-  right: 80px;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  z-index: 1001;
-  cursor: pointer;
-}
-
-
-/* Sidebar (HIDDEN BY DEFAULT) */
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 260px;
-  height: 100vh;
-  background: rgba(4, 8, 29, 0.85);
-  backdrop-filter: blur(10px);
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  transform: translateX(100%); /* THIS hides it */
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-
-#sidebar {
-  transform: translateX(-100%);
-}
-
-#sidebar.active {
-  transform: translateX(0);
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 999;
-}
-
-/* Active states */
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Hide on desktop */
-@media (min-width: 768px) {
-  .menu-btn,
-  .sidebar,
-  .overlay {
-    display: none;
-  }
-}
-
 
 .brand {
   display: flex;
@@ -192,7 +114,7 @@ body {
 }
 
 .logo-img {
-  height: 34px;
+  height: 50px;
   width: auto;
 }
 

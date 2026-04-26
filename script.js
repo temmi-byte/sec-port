@@ -49,53 +49,6 @@ window.addEventListener('load', () => {
 });
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.getElementById("menuBtn");
-  const sidebar = document.getElementById("sidebar");
-  const overlay = document.getElementById("overlay");
-
-  if (!menuBtn || !sidebar || !overlay) return;
-
-  // 🔒 Force initial state on load
-  closeSidebar();
-
-  function openSidebar() {
-    sidebar.classList.add("active");
-    overlay.classList.add("active");
-    document.body.style.overflow = "hidden"; // prevent background scroll
-  }
-
-  function closeSidebar() {
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-
-  function toggleSidebar() {
-    const isOpen = sidebar.classList.contains("active");
-    if (isOpen) {
-      closeSidebar();
-    } else {
-      openSidebar();
-    }
-  }
-
-  // 👇 Events
-  menuBtn.addEventListener("click", toggleSidebar);
-  overlay.addEventListener("click", closeSidebar);
-
-  // 🔥 Safety: close sidebar on resize (prevents layout bugs)
-  window.addEventListener("resize", () => {
-    closeSidebar();
-  });
-
-  // 🔥 Safety: escape key closes sidebar
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeSidebar();
-  });
-});
-
 // Get the modal elements
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("fullImage");
