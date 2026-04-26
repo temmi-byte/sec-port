@@ -50,18 +50,50 @@ window.addEventListener('load', () => {
 
 
 
-const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
 
-menuBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("active");
-  overlay.classList.toggle("active");
-});
+  if (!menuBtn || !sidebar || !overlay) return;
 
-overlay.addEventListener("click", () => {
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
+  // 🔒 Force initial state on load
+  closeSidebar();
+
+  function openSidebar() {
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden"; // prevent background scroll
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  function toggleSidebar() {
+    const isOpen = sidebar.classList.contains("active");
+    if (isOpen) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  }
+
+  // 👇 Events
+  menuBtn.addEventListener("click", toggleSidebar);
+  overlay.addEventListener("click", closeSidebar);
+
+  // 🔥 Safety: close sidebar on resize (prevents layout bugs)
+  window.addEventListener("resize", () => {
+    closeSidebar();
+  });
+
+  // 🔥 Safety: escape key closes sidebar
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeSidebar();
+  });
 });
 
 // Get the modal elements

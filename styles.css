@@ -110,7 +110,7 @@ body {
 .menu-btn {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 80px;
   font-size: 28px;
   background: none;
   border: none;
@@ -118,6 +118,7 @@ body {
   z-index: 1001;
   cursor: pointer;
 }
+
 
 /* Sidebar (HIDDEN BY DEFAULT) */
 .sidebar {
@@ -142,6 +143,15 @@ body {
   color: white;
   text-decoration: none;
   font-size: 18px;
+}
+
+
+#sidebar {
+  transform: translateX(-100%);
+}
+
+#sidebar.active {
+  transform: translateX(0);
 }
 
 /* Overlay */
