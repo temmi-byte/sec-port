@@ -18,35 +18,36 @@ body {
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: linear-gradient(135deg, #000000, #022f6d);
+  background: linear-gradient(135deg, #000000, #000914);
 }
 
 
 .bg::before {
   content: "";
   position: absolute;
-  top: -10%;
+  top: -18%;
   left: -10%;
   width: 120%;
-  height: 120%;
+  height: 200%;
   
   background:
-    radial-gradient(circle at 20% 20%, rgba(6, 169, 223, 0.692), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(33, 160, 240, 0.582), transparent 35%),
-    radial-gradient(circle at 50% 80%, rgba(33, 133, 255, 0.5), transparent 35%);
+    radial-gradient(circle at 20% 20%, rgba(41, 107, 252, 0.692), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(3, 110, 177, 0.582), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(4, 109, 238, 0.5), transparent 35%);
     
-  animation: floatGlow 2s ease-in-out infinite alternate;
+  animation: floatGlow 3.5s ease-in-out infinite alternate;
 }
 
 @keyframes floatGlow {
   from {
-    transform: translateY(0px);
+    transform: translateY(70px);
   }
 
   to {
-    transform: translateY(-62px);
+    transform: translateY(-180px);
   }
 }
+
 
 /* Fullscreen overlay */
 #preloader {
