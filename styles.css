@@ -33,7 +33,7 @@ body {
   background:
     radial-gradient(circle at 20% 20%, rgba(41, 108, 252, 0.589), transparent 35%),
     radial-gradient(circle at 80% 30%, rgba(3, 110, 177, 0.582), transparent 35%),
-    radial-gradient(circle at 50% 80%, rgba(1, 112, 247, 0.575), transparent 35%);
+    radial-gradient(circle at 50% 80%, rgba(1, 112, 247, 0.479), transparent 35%);
     
   animation: floatGlow 3.5s ease-in-out infinite alternate;
 }
