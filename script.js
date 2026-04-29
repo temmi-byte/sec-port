@@ -150,3 +150,18 @@ modal.onclick = function(event) {
       behavior: "smooth"
     });
   });
+
+
+  const privacyPopup = document.getElementById("privacyPopup");
+  const privacyCheck = document.getElementById("privacyCheck");
+
+  if (localStorage.getItem("privacyAccepted") === "true") {
+    privacyPopup.style.display = "none";
+  }
+
+  privacyCheck.addEventListener("change", function () {
+    if (this.checked) {
+      localStorage.setItem("privacyAccepted", "true");
+      privacyPopup.style.display = "none";
+    }
+  });
