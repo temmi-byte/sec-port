@@ -35,7 +35,7 @@ body {
     radial-gradient(circle at 80% 30%, rgba(3, 110, 177, 0.486), transparent 35%),
     radial-gradient(circle at 50% 80%, rgba(1, 112, 247, 0.479), transparent 35%);
     
-  animation: floatGlow 3.5s ease-in-out infinite alternate;
+  animation: floatGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes floatGlow {
@@ -44,7 +44,7 @@ body {
   }
 
   to {
-    transform: translateY(-180px);
+    transform: translateY(-200px);
   }
 }
 
