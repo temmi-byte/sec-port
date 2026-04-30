@@ -31,20 +31,20 @@ body {
   height: 200%;
   
   background:
-    radial-gradient(circle at 20% 20%, rgba(5, 80, 241, 0.397), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(3, 110, 177, 0.486), transparent 35%),
-    radial-gradient(circle at 50% 80%, rgba(1, 112, 247, 0.479), transparent 35%);
+    radial-gradient(circle at 20% 20%, rgba(5, 80, 241, 0.486), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(3, 110, 177, 0.575), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(1, 112, 247, 0.589), transparent 35%);
     
   animation: floatGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes floatGlow {
   from {
-    transform: translateY(20px);
+    transform: translateY(100px);
   }
 
   to {
-    transform: translateY(-200px);
+    transform: translateY(-250px);
   }
 }
 
@@ -917,22 +917,6 @@ body {
   background: #4fc3f7;
 }
 
-#backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1539495d;
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1rem;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  font-size: 1.2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  z-index: 999;
-}
-
 .privacy-popup {
   position: fixed;
   bottom: 20px;
@@ -945,7 +929,7 @@ body {
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  z-index: 999;
+  z-index: 999999;
 }
 
 .privacy-popup p {
@@ -972,4 +956,50 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  gap: 1.2rem;
+  
+  padding: 0.9rem 1.4rem;
+  border-radius: 50px;
+  
+  background: rgba(8, 25, 55, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(255,255,255,0.08);
+  
+  z-index: 999;
+}
+
+.bottom-nav a {
+  color: #bbe1fac2;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.bottom-nav a:hover {
+  color: #56c1f3f8;
+  transform: translateY(-3px);
+}
+
+@media (min-width: 769px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
 }
