@@ -149,3 +149,11 @@ modal.onclick = function(event) {
       privacyPopup.style.display = "none";
     }
   });
+
+
+  const referralNotice = document.getElementById("referralNotice");
+  const closeNotice = document.getElementById("closeNotice");
+
+  closeNotice.addEventListener("click", () => {
+    referralNotice.style.display = "none";
+  });
