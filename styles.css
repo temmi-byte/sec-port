@@ -108,6 +108,7 @@ body {
 .logo-img {
   height: 50px;
   width: auto;
+  margin-left: 0%;
 }
 
 
@@ -981,7 +982,7 @@ body {
 
 .bottom-nav a {
   color: #bbe1fac2;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-decoration: none;
   transition: 0.3s ease;
 }
