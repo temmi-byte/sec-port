@@ -224,7 +224,20 @@
   <p>
     Know a business that needs a website? Refer them to Temmie The Developer and earn 10% commission for every successful project.
   </p>
-  <a href="#contact" class="referral-btn">Refer a Client</a>
+  <button class="referral-btn" onclick="toggleReferralForm()">
+  Refer a Client
+</button>
+
+<div class="referral-form-container" id="referralForm">
+  <form class="referral-form" onsubmit="sendReferralToWhatsApp(event)">
+    <input type="text" id="referrerName" placeholder="Your Name" required>
+    <input type="email" id="referrerEmail" placeholder="Your Email" required>
+    <input type="text" id="clientName" placeholder="Client Name" required>
+    <input type="text" id="clientBusiness" placeholder="Client Business Name" required>
+    <input type="text" id="clientContact" placeholder="Client Contact" required>
+    <button type="submit">Submit Referral</button>
+  </form>
+</div>
 </section>
 
 <section class="projects" id="projects">

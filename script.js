@@ -157,3 +157,34 @@ modal.onclick = function(event) {
   closeNotice.addEventListener("click", () => {
     referralNotice.style.display = "none";
   });
+
+  function toggleReferralForm() {
+    const form = document.getElementById("referralForm");
+
+    if (form.style.display === "block") {
+      form.style.display = "none";
+    } else {
+      form.style.display = "block";
+    }
+  }
+
+function sendReferralToWhatsApp(event) {
+  event.preventDefault();
+
+  const referrerName = document.getElementById("referrerName").value;
+  const referrerEmail = document.getElementById("referrerEmail").value;
+  const clientName = document.getElementById("clientName").value;
+  const clientBusiness = document.getElementById("clientBusiness").value;
+  const clientContact = document.getElementById("clientContact").value;
+
+  const message = `Hello, I want to submit a referral:%0A
+Referrer Name: ${referrerName}%0A
+Referrer Email: ${referrerEmail}%0A
+Client Name: ${clientName}%0A
+Client Business: ${clientBusiness}%0A
+Client Contact: ${clientContact}`;
+
+  const phoneNumber = "2348027715673";
+
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+}
