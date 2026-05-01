@@ -155,7 +155,7 @@ modal.onclick = function(event) {
   const closeNotice = document.getElementById("closeNotice");
   setTimeout(() => {
     referralNotice.classList.add("show");
-  }, 2000);
+  }, 5000);
 
   closeNotice.addEventListener("click", () => {
     referralNotice.style.display = "none";

@@ -28,7 +28,7 @@ body {
   top: -18%;
   left: -10%;
   width: 120%;
-  height: 200%;
+  height: 250%;
   
   background:
     radial-gradient(circle at 20% 20%, rgba(5, 80, 241, 0.486), transparent 35%),
@@ -44,7 +44,7 @@ body {
   }
 
   to {
-    transform: translateY(-250px);
+    transform: translateY(-200px);
   }
 }
 
