@@ -1025,7 +1025,7 @@ body {
 
 .bottom-nav a {
   color: #bbe1fac2;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   text-decoration: none;
   transition: 0.3s ease;
 }
@@ -1045,7 +1045,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.87rem;
+  font-size: 0.80rem;
 }
 
 .referral-notice {
