@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -35,7 +36,7 @@ body {
     radial-gradient(circle at 80% 30%, rgba(3, 110, 177, 0.575), transparent 35%),
     radial-gradient(circle at 50% 80%, rgba(1, 112, 247, 0.589), transparent 35%);
     
-  animation: floatGlow 3s ease-in-out infinite alternate;
+  animation: floatGlow 3.4s ease-in-out infinite alternate;
 }
 
 @keyframes floatGlow {
@@ -44,7 +45,7 @@ body {
   }
 
   to {
-    transform: translateY(-200px);
+    transform: translateY(-290px);
   }
 }
 
