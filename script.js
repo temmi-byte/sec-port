@@ -7,9 +7,9 @@
     "Setup & maintainance of Google business profiles"
   ];
 
-  const typingSpeed = 40;
-  const deletingSpeed = 50;
-  const delayBetween = 1500;
+  const typingSpeed = 50;
+  const deletingSpeed = 60;
+  const delayBetween = 2000;
 
   const typingElement = document.getElementById("typing-text");
 
