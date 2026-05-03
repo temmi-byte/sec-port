@@ -1,10 +1,9 @@
 
 
   const texts = [
-    "Designing conversion-ready websites",
-    "Websites that look credible and sell",
-    "Web2 & Web3 experiences",
-    "Setup & maintainance of Google business profiles"
+    "Get Seen. Get Chosen.",
+    "Look Serious. Get Customers.",
+    "Stop Losing Customers."
   ];
 
   const typingSpeed = 50;
