@@ -157,7 +157,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.5rem 1rem;
+  padding: 8px 6px;
   border: 1px solid rgba(52, 152, 219, 0.25);
   border-radius: 50px;
   background: rgba(8, 25, 55, 0.45);
@@ -166,7 +166,7 @@ body {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
