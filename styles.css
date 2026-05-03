@@ -157,7 +157,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.5rem 1.1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid rgba(52, 152, 219, 0.25);
   border-radius: 50px;
   background: rgba(8, 25, 55, 0.45);
@@ -166,7 +166,7 @@ body {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -218,13 +218,20 @@ body {
 .hero-actions {
   margin-top: 2.2rem;
   display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  gap: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column; 
+    width: 100%;
+  }
+}
+
+
 .btn {
-  padding: 0.7rem 1.6rem;
+  padding: 0.9rem 2rem;
   border-radius: 999px;
   text-decoration: none;
   font-size: 0.9rem;
