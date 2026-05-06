@@ -107,7 +107,7 @@ modal.onclick = function(event) {
     });
   });
 
-  setInterval(autoSlide, 4000);
+  setInterval(autoSlide, 5000);
 
 
   const faqItems = document.querySelectorAll(".faq-item");
