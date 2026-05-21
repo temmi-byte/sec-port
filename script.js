@@ -194,3 +194,16 @@ Client Contact: ${clientContact}`;
 
   window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
 }
+
+const mobileNav = document.querySelector(".bottom-nav");
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+  const heroBottom = hero.offsetHeight;
+
+  if (window.scrollY > heroBottom - 110) {
+    mobileNav.classList.add("show");
+  } else {
+    mobileNav.classList.remove("show");
+  }
+});

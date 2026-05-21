@@ -10,12 +10,13 @@ html {
 }
 
 body {
+  background: #02050d;
   color: #fff;
   overflow-x: hidden;
 }
 
 .bg {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
   overflow: hidden;
@@ -146,6 +147,24 @@ body {
   text-align: center;
   padding: 2rem 1.5rem;
 }
+
+.hero-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 220px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 6, 23, 0) 0%,
+    #020617 100%
+  );
+
+  z-index: 1;
+}
+
 .hero-text {
   max-width: 520px;
   justify-content: center;
@@ -279,7 +298,12 @@ body {
 
 .about {
   padding: 5rem 2rem;
-  background: rgba(0, 13, 37, 0.288);
+ background: linear-gradient(
+  to bottom,
+  #000208,
+  #06080a
+);
+ border-top: 1px solid rgba(45, 107, 221, 0.637);
 }
 
 .about-container {
@@ -330,6 +354,8 @@ body {
 
 
 .problems-solutions {
+  background: #050507;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
   padding: 4rem 1.5rem;
   text-align: center;
 }
@@ -375,8 +401,9 @@ body {
 
 
 .services {
-  background: rgba(1, 23, 80, 0.301);
-  padding: 4rem 1.5rem;
+ background: #050507;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
+    padding: 4rem 1.5rem;
   text-align: center;
 }
 
@@ -388,7 +415,8 @@ body {
 }
 
 .service-card {
-  background: rgba(255, 255, 255, 0.06);
+ background: rgba(255,255,255,0.03);
+border: 1px solid rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
@@ -426,7 +454,8 @@ body {
   padding: 3rem 2rem;
   text-align: center;
   
-  background: rgba(2, 11, 54, 0.226);
+  background: #05050c;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
   border: 1px solid rgba(79, 195, 247, 0.12);
   border-radius: 20px;
   
@@ -466,7 +495,8 @@ body {
 .founder-section {
   padding: 80px 20px;
   text-align: center;
-  background: rgba(1, 33, 92, 0.06); 
+  background: #050508;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
 
 }
 
@@ -504,7 +534,8 @@ body {
 
 .why-temmie {
   padding: 80px 20px;
-  background: rgba(1, 24, 66, 0.596);
+  background: #050507;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
 }
 
 .why-temmie .container {
@@ -549,7 +580,8 @@ body {
 
 .projects {
   padding: 4rem 1.5rem;
-  background: rgba(1, 17, 61, 0.658);
+ background: #050511;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
 }
 
 .projects-grid {
@@ -653,7 +685,8 @@ body {
 
 .faq {
   padding: 4rem 1.5rem;
-  background: rgba(1, 14, 54, 0.233);
+ background: #050507;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
   backdrop-filter: blur(12px);
 }
 
@@ -714,7 +747,8 @@ body {
 
 .contact {
   padding: 5rem 2rem;
-  background: rgba(2, 20, 82, 0.05);
+background: #03030a;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
 }
 
 .contact-container {
@@ -806,7 +840,8 @@ body {
   padding: 4.5rem 2rem;
   text-align: center;
   backdrop-filter: blur(14px);
-  background: rgba(1, 27, 141, 0.281);
+  background: #050507;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
 }
 
 .brand-wrap {
@@ -843,7 +878,8 @@ body {
       gap:40px; 
       padding:40px;
        border-radius:20px; 
-       background: rgba(255,255,255,0.05); 
+       background: #020617;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
        backdrop-filter: blur(12px); 
        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         transition:0.3s;
@@ -862,7 +898,8 @@ body {
   }
 
   .site-footer {
-   background: rgba(11, 22, 88, 0.514); 
+  background: #050507;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
        backdrop-filter: blur(12px); 
        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -925,6 +962,8 @@ body {
 }
 
 .footer-bottom {
+    background: #050507;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
   text-align: center;
   margin-top: 3rem;
   font-size: 0.85rem;
@@ -998,6 +1037,8 @@ body {
 
 
 .testimonials {
+  background: #05050a;
+   border-top: 1px solid rgba(45, 107, 221, 0.637);
   padding: 4rem 1.5rem;
   text-align: center;
 }
@@ -1101,21 +1142,31 @@ body {
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
-  
+
+  transform: translateX(-50%) translateY(100px);
+
   display: flex;
   gap: 1.2rem;
-  
+
   padding: 0.9rem 1.4rem;
   border-radius: 50px;
-  
-  background: rgba(8, 25, 55, 0.55);
+
+  background: rgba(6, 12, 22, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  
+
   border: 1px solid rgba(255,255,255,0.08);
-  
+
   z-index: 999;
+
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+
+.bottom-nav.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .bottom-nav a {
