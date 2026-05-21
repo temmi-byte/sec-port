@@ -133,23 +133,6 @@ modal.onclick = function(event) {
     }
   });
 
-
-
-  const privacyPopup = document.getElementById("privacyPopup");
-  const privacyCheck = document.getElementById("privacyCheck");
-
-  if (localStorage.getItem("privacyAccepted") === "true") {
-    privacyPopup.style.display = "none";
-  }
-
-  privacyCheck.addEventListener("change", function () {
-    if (this.checked) {
-      localStorage.setItem("privacyAccepted", "true");
-      privacyPopup.style.display = "none";
-    }
-  });
-
-
   const referralNotice = document.getElementById("referralNotice");
   const closeNotice = document.getElementById("closeNotice");
   setTimeout(() => {
@@ -183,7 +166,7 @@ function sendReferralToWhatsApp(event) {
   const clientBusiness = document.getElementById("clientBusiness").value;
   const clientContact = document.getElementById("clientContact").value;
 
-  const message = `Hello, I want to submit a referral:%0A
+  const message = `Hello Temmie, I want to submit a referral:%0A
 Referrer Name: ${referrerName}%0A
 Referrer Email: ${referrerEmail}%0A
 Client Name: ${clientName}%0A
