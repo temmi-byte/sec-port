@@ -120,18 +120,6 @@ modal.onclick = function(event) {
     });
   });
 
-  const btn = document.getElementById("viewMoreBtn");
-  const hiddenProjects = document.getElementById("hiddenProjects");
-
-  btn.addEventListener("click", () => {
-    if (hiddenProjects.style.display === "grid") {
-      hiddenProjects.style.display = "none";
-      btn.textContent = "View More Projects";
-    } else {
-      hiddenProjects.style.display = "grid";
-      btn.textContent = "Show Less";
-    }
-  });
 
   const referralNotice = document.getElementById("referralNotice");
   const closeNotice = document.getElementById("closeNotice");
@@ -147,15 +135,6 @@ modal.onclick = function(event) {
     referralNotice.style.display = "none";
   });
 
-  function toggleReferralForm() {
-    const form = document.getElementById("referralForm");
-
-    if (form.style.display === "block") {
-      form.style.display = "none";
-    } else {
-      form.style.display = "block";
-    }
-  }
 
 function sendReferralToWhatsApp(event) {
   event.preventDefault();
