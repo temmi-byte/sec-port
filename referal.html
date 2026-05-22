@@ -24,9 +24,7 @@
 
 </head>
 <body>
-    
-   
-
+  
 
   <!-- NAV (MINIMAL, CALM) -->
   <header class="nav">
@@ -108,5 +106,16 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, 
+    once: false,     
+  });
+</script>
 </body>
 </html>

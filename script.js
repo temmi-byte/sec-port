@@ -107,18 +107,7 @@ modal.onclick = function(event) {
     });
   });
 
-  setInterval(autoSlide, 5000);
-
-
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  faqItems.forEach(item => {
-    const question = item.querySelector(".faq-question");
-
-    question.addEventListener("click", () => {
-      item.classList.toggle("active");
-    });
-  });
+  setInterval(autoSlide, 6000);
 
 
   const referralNotice = document.getElementById("referralNotice");
