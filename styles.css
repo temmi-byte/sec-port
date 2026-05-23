@@ -784,7 +784,7 @@ border: 1px solid rgba(255,255,255,0.05);
 .faq-question {
   width: 100%;
   background: transparent;
-  color: #5596f7;
+  color: #8cb9fc;
   border: none;
   outline: none;
   padding: 1rem 1.2rem;
@@ -1319,13 +1319,13 @@ background: #03030a;
 }
 
 .contact-section h2 {
-  color: #ffffff;
+  color: #5697fa;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .contact-section p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(198, 209, 231, 0.8);
   max-width: 650px;
   margin: 0 auto 1.5rem;
   line-height: 1.8;
@@ -1335,7 +1335,7 @@ background: #03030a;
   display: inline-block;
   padding: 0.9rem 1.5rem;
   border-radius: 10px;
-  background: #4f84f7;
+  background: #3e7afc;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -1345,4 +1345,14 @@ background: #03030a;
 .contact-btn:hover {
   transform: translateY(-3px);
   background: #38bdf8;
+}
+
+
+.diagonal-card {
+  transform: rotate(-2deg);
+  transition: 0.4s ease;
+}
+
+.diagonal-card:hover {
+  transform: rotate(0deg) translateY(-8px);
 }
