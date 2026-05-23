@@ -530,7 +530,7 @@ border: 1px solid rgba(255,255,255,0.05);
   
   background: #05050c;
    border-top: 1px solid rgba(45, 107, 221, 0.637);
-  border: 1px solid rgba(79, 195, 247, 0.12);
+  border: 1px solid rgba(79, 132, 247, 0.26);
   border-radius: 20px;
   
   backdrop-filter: blur(8px);
@@ -633,7 +633,8 @@ border: 1px solid rgba(255,255,255,0.05);
 .why-card {
   padding: 25px;
   border-radius: 12px;
-  background: rgba(97, 150, 250, 0.089); 
+  background: rgba(97, 150, 250, 0.089);
+   border: 1px solid rgba(79, 132, 247, 0.507); 
   transition: 0.3s ease;
 }
 
@@ -670,7 +671,7 @@ border: 1px solid rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(79, 118, 243, 0.733);
   transition: transform 0.3s ease;
 }
 
@@ -841,6 +842,7 @@ background: #03030a;
 }
 
 .contact h2 {
+  color: #53a2fd;
   font-size: 1.9rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
