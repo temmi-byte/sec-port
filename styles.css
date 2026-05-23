@@ -288,7 +288,7 @@ body {
 .stats-track {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 
   width: max-content;
 
@@ -320,8 +320,20 @@ body {
   }
 
   to {
-    transform: translateX(-30%);
+    transform: translateX(-52%);
   }
+}
+
+@media (max-width: 768px) {
+
+  .stats-track {
+    gap: 2rem;
+  }
+
+  .stat {
+    min-width: 170px;
+  }
+
 }
 
 /* MOBILE */
@@ -417,7 +429,7 @@ body {
 }
  
 .section-title {
-  color: #3877fd;
+  color: #5388fc;
   margin-top: 15px;
 }
 
@@ -440,7 +452,7 @@ body {
 
 .ps-card h3 {
   margin-bottom: 1.5rem;
-  color: #4fc3f7;
+  color: #3b6df7;
   font-size: 1.4rem;
 }
 
@@ -493,13 +505,13 @@ border: 1px solid rgba(255,255,255,0.05);
 
 .service-card i {
   font-size: 2rem;
-  color: #4fc3f7;
+  color: #3296f3;
   margin-bottom: 1rem;
 }
 
 .service-card h3 {
   margin-bottom: 0.8rem;
-  color: #ffffff;
+  color: #5f91fc;
   font-size: 1.1rem;
 }
 
@@ -621,7 +633,7 @@ border: 1px solid rgba(255,255,255,0.05);
 .why-card {
   padding: 25px;
   border-radius: 12px;
-  background: rgba(97, 150, 250, 0.06); 
+  background: rgba(97, 150, 250, 0.089); 
   transition: 0.3s ease;
 }
 
@@ -632,6 +644,7 @@ border: 1px solid rgba(255,255,255,0.05);
 .why-card h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #5096ff;
 }
 
 .why-card p {
@@ -771,7 +784,7 @@ border: 1px solid rgba(255,255,255,0.05);
 .faq-question {
   width: 100%;
   background: transparent;
-  color: #fff;
+  color: #5596f7;
   border: none;
   outline: none;
   padding: 1rem 1.2rem;
@@ -803,7 +816,7 @@ border: 1px solid rgba(255,255,255,0.05);
 .faq-answer p {
   margin: 0;
   padding: 0 1.2rem 1rem;
-  color: #dcdcdc;
+  color: #b3afaf;
   line-height: 1.6;
 }
 
@@ -872,7 +885,7 @@ background: #03030a;
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255,255,255,0.6);
+  color: rgba(166, 206, 252, 0.6);
 }
 
 .btn-primary {
@@ -1007,7 +1020,7 @@ background: #03030a;
 }
 
 .footer-links a {
-  color: #62c4ee;
+  color: #85a2ff;
   text-decoration: none;
   font-size: 0.95rem;
 }
@@ -1135,7 +1148,7 @@ background: #03030a;
 }
 
 .stars {
-  color: #4fc3f7;
+  color: #4f98f7;
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
@@ -1147,7 +1160,7 @@ background: #03030a;
 }
 
 .testimonial-slide h4 {
-  color: #4fc3f7;
+  color: #4f8af7;
 }
 
 .testimonial-dots {
@@ -1165,7 +1178,7 @@ background: #03030a;
 }
 
 .dot.active {
-  background: #4fc3f7;
+  background: #4f8af7;
 }
 
 .bottom-nav {
@@ -1322,7 +1335,7 @@ background: #03030a;
   display: inline-block;
   padding: 0.9rem 1.5rem;
   border-radius: 10px;
-  background: #4fc3f7;
+  background: #4f84f7;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
