@@ -139,6 +139,7 @@ body {
 
 /* HERO */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -146,6 +147,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 2rem 1.5rem;
+  z-index: 1;
 }
 
 .hero-fade {
@@ -166,10 +168,12 @@ body {
 }
 
 .hero-text {
+  position: relative;
   margin-top: 30px;
   max-width: 520px;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .hero-badge {
@@ -236,10 +240,13 @@ body {
 }
 
 .hero-actions {
+  position: relative;
+  pointer-events: auto;
   margin-top: 2.2rem;
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
+  z-index: 20;
 }
 
 @media (max-width: 768px) {
@@ -262,13 +269,13 @@ body {
 .btn.primary {
   background: #6ea8ff;
   color: #020617;
-  z-index: 2;
+  z-index: 5;
 }
 
 .btn.ghost {
   border: 1px solid rgba(255,255,255,0.3);
   color: #ffffff;
-  z-index: 2;
+  z-index: 5;
 }
 
 
