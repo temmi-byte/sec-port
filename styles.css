@@ -303,14 +303,14 @@ body {
 .stat h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #a8cefc;
+  color: #509cf8;
 
   margin-bottom: 0.3rem;
 }
 
 .stat p {
   font-size: 0.95rem;
-  color: #dee2e7;
+  color: #8193a8;
   letter-spacing: 0.5px;
 }
 
@@ -359,7 +359,6 @@ body {
   #000208,
   #06080a
 );
- border-top: 1px solid rgba(45, 107, 221, 0.637);
 }
 
 .about-container {
