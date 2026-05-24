@@ -474,7 +474,7 @@ body {
  background: rgba(255,255,255,0.03);
 border: 1px solid rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(73, 118, 243, 0.459);
+  border: 1px solid rgba(2, 46, 165, 0.459);
   border-radius: 18px;
   padding: 2rem;
   text-align: left;
@@ -810,6 +810,7 @@ border: 1px solid rgba(255,255,255,0.05);
   color: #f5f7ff;
   border-top: 1px solid rgba(45, 107, 221, 0.637);
   overflow: hidden;
+  z-index: 15;
 }
 
 .process-container {
@@ -836,6 +837,7 @@ border: 1px solid rgba(255,255,255,0.05);
   line-height: 1.05;
   margin: 0 0 18px;
   font-weight: 700;
+  z-index: 2;
 }
 
 .process-intro {
@@ -844,6 +846,7 @@ border: 1px solid rgba(255,255,255,0.05);
   color: rgba(245, 247, 255, 0.75);
   margin: 0 auto;
   max-width: 620px;
+  z-index: 2;
 }
 
 .timeline {
