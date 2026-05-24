@@ -301,7 +301,7 @@ body {
 
   width: max-content;
 
-  animation: scrollStats 40s linear infinite;
+  animation: scrollStats 50s linear infinite;
 }
 
 .stat {
@@ -903,6 +903,7 @@ border: 1px solid rgba(255,255,255,0.05);
   letter-spacing: 0.2em;
   color: #489af7;
   margin-bottom: 12px;
+  z-index: 5;
 }
 
 .timeline-content h3 {
@@ -910,6 +911,7 @@ border: 1px solid rgba(255,255,255,0.05);
   line-height: 1.1;
   margin: 0 0 12px;
   font-weight: 700;
+  z-index: 5;
 }
 
 .timeline-content p {
@@ -917,6 +919,7 @@ border: 1px solid rgba(255,255,255,0.05);
   font-size: 1rem;
   line-height: 1.8;
   color: rgba(245, 247, 255, 0.76);
+  z-index: 5;
 }
 
 .timeline-dot {
