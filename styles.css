@@ -301,7 +301,7 @@ body {
 
   width: max-content;
 
-  animation: scrollStats 18s linear infinite;
+  animation: scrollStats 40s linear infinite;
 }
 
 .stat {
@@ -329,7 +329,7 @@ body {
   }
 
   to {
-    transform: translateX(-85%);
+    transform: translateX(-95%);
   }
 }
 
@@ -867,6 +867,7 @@ border: 1px solid rgba(255,255,255,0.05);
     rgba(142, 160, 255, 0.95),
     rgba(142, 160, 255, 0.15)
   );
+  z-index: 2;
 }
 
 .timeline-item {
@@ -875,6 +876,7 @@ border: 1px solid rgba(255,255,255,0.05);
   grid-template-columns: 1fr 56px 1fr;
   align-items: center;
   min-height: 220px;
+  z-index: 2;
 }
 
 .timeline-item.left .timeline-content {
@@ -935,6 +937,7 @@ border: 1px solid rgba(255,255,255,0.05);
   inset: -14px;
   border-radius: 999px;
   border: 1px solid rgba(142, 160, 255, 0.16);
+  z-index: 2;
 }
 
 .reveal {
@@ -974,12 +977,14 @@ border: 1px solid rgba(255,255,255,0.05);
   .timeline-line {
     left: 14px;
     transform: none;
+    z-index: 2;
   }
 
   .timeline-item {
     grid-template-columns: 28px 1fr;
     min-height: auto;
     padding: 0 0 34px;
+    z-index: 2;
   }
 
   .timeline-item.left .timeline-content,
@@ -1011,15 +1016,18 @@ border: 1px solid rgba(255,255,255,0.05);
 @media (max-width: 520px) {
   .process-header h2 {
     font-size: 1.8rem;
+    z-index: 2;
   }
 
   .timeline-content h3 {
     font-size: 1.25rem;
+    z-index: 2;
   }
 
   .timeline-content p {
     font-size: 0.98rem;
     line-height: 1.75;
+    z-index: 2;
   }
 }
 
