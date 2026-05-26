@@ -76,7 +76,7 @@
 
       <div class="form-group">
         <label for="phone">Phone Number</label> 
-        <input type="tel" id="phone" name="phone" placeholder="+44 800 000 0000" required>
+        <input type="tel" id="phone" name="phone" placeholder=" 800 000 0000" required>
       </div>
 
       <div class="form-group">
@@ -233,13 +233,13 @@
   const input = document.querySelector("#phone");
 
   window.intlTelInput(input, {
-    initialCountry: "auto",
+    initialCountry: "us",
     separateDialCode: true,
     geoIpLookup: function(callback) {
       fetch("https://ipapi.co/json")
         .then(res => res.json())
         .then(data => callback(data.country_code))
-        .catch(() => callback("ng"));
+        .catch(() => callback("us"));
     }
   });
 </script>

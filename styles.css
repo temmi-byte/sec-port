@@ -1657,3 +1657,54 @@ background: #03030a;
 }
 
 }
+
+#phone {
+  width: 100%;
+  padding: 14px 16px 14px 90px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#phone::placeholder {
+  color: #aaa;
+}
+
+.iti {
+  width: 100%;
+}
+
+.iti__selected-country {
+  background-color: transparent !important;
+  padding: 0 12px;
+}
+
+.iti__country-list {
+  background: rgba(25, 28, 78, 0.781);
+  color: #fff;
+  border: 1px solid #333;
+  z-index: 10;
+}
+
+.iti__country:hover {
+  background-color: #222;
+}
+
+.iti__dial-code {
+  color: #aaa;
+}
+
+.iti__search-input {
+  background-color: #111 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+  outline: none;
+}
+
+.iti__search-input::placeholder {
+  color: #aaa !important;
+}
