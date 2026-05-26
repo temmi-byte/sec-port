@@ -1708,3 +1708,8 @@ background: #03030a;
 .iti__search-input::placeholder {
   color: #aaa !important;
 }
+
+.iti {
+  --iti-path-flags-1x: url("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/img/flags.webp");
+  --iti-path-flags-2x: url("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/img/flags@2x.webp");
+}
