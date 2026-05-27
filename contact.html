@@ -239,12 +239,12 @@
 <script>
   const input = document.querySelector("#phone");
 
-  window.intlTelInput(input, {
-    initialCountry: "us",
-    separateDialCode: true,
-    preferredCountries: ["ng", "us", "gb"],
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/utils.js"
-  });
+window.intlTelInput(input, {
+  initialCountry: "ng",
+  separateDialCode: true,
+  preferredCountries: ["ng", "us", "gb"],
+  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/utils.js"
+});
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
