@@ -1742,6 +1742,7 @@ background: #03030a;
   .iti__selected-country {
     position: absolute !important;
     z-index: 10;
+    overflow: visible;
   }
 }
 
