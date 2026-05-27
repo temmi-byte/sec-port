@@ -1741,6 +1741,7 @@ background: #03030a;
   .iti__flag-container,
   .iti__selected-country {
     position: absolute !important;
+    z-index: 10;
   }
 }
 
