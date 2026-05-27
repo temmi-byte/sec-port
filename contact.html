@@ -23,10 +23,10 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="https://unpkg.com/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+
 
 <!-- intl-tel-input CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/css/intlTelInput.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
 
 </head>
 <body>
@@ -236,15 +236,17 @@
 <!-- intl-tel-input JS -->
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/intlTelInput.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+
 <script>
   const input = document.querySelector("#phone");
 
-window.intlTelInput(input, {
-  initialCountry: "ng",
-  separateDialCode: true,
-  preferredCountries: ["ng", "us", "gb"],
-  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/utils.js"
-});
+  window.intlTelInput(input, {
+    initialCountry: "ng",
+    separateDialCode: true,
+    preferredCountries: ["ng", "us", "gb"],
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
+  });
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
