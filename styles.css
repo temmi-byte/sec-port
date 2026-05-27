@@ -1713,6 +1713,6 @@ background: #03030a;
 
 
 .iti {
-  --iti-path-flags-1x: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.3.0/img/flags.png");
-  --iti-path-flags-2x: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.3.0/img/flags@2x.png");
+  --iti-path-flags-1x: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags.png");
+  --iti-path-flags-2x: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags@2x.png");
 }
