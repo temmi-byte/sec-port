@@ -1721,3 +1721,37 @@ background: #03030a;
     --iti-path-flags-2x: url("https://unpkg.com/intl-tel-input@25.3.0/build/img/flags@2x.webp");
   }
 }
+
+@media screen and (max-width: 768px) {
+
+  .iti {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .iti__flag-container {
+    display: flex !important;
+    align-items: center !important;
+    position: absolute !important;
+    height: 100% !important;
+    z-index: 10 !important;
+  }
+
+  .iti__selected-country {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+
+  .iti__flag {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  #phone {
+    width: 100% !important;
+    padding-left: 90px !important;
+  }
+
+}
