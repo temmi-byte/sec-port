@@ -1660,14 +1660,13 @@ background: #03030a;
 
 #phone {
   width: 100%;
-  padding: 14px 16px 14px 90px;
+  height: 52px;
+  padding-left: 52px;
   background: rgba(255,255,255,0.08);
   color: #fff;
   border: 1px solid #333;
   border-radius: 10px;
   font-size: 16px;
-  outline: none;
-  box-sizing: border-box;
 }
 
 #phone::placeholder {
@@ -1678,9 +1677,9 @@ background: #03030a;
   width: 100%;
 }
 
-.iti__selected-country {
-  background-color: transparent !important;
-  padding: 0 12px;
+.iti--separate-dial-code .iti__selected-country {
+  background: transparent !important;
+  max-width: 80px;
 }
 
 .iti__country-list {
@@ -1713,15 +1712,4 @@ background: #03030a;
 .iti {
   --iti-path-flags-1x: url("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/img/flags.webp");
   --iti-path-flags-2x: url("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/img/flags@2x.webp");
-}
-
-
-
-.iti {
-  width: 100%;
-}
-
-#phone {
-  width: 100%;
-  padding: 14px 16px 14px 90px;
 }
