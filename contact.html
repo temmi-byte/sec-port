@@ -21,7 +21,9 @@
   <!-- AOS CSS -->
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/intl-tel-input@25.3.0/build/css/intlTelInput.css">
 
 </head>
 <body>
@@ -227,7 +229,7 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+<script src="https://unpkg.com/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
 
 <script>
   const input = document.querySelector("#phone");
@@ -236,25 +238,8 @@
     initialCountry: "us",
     separateDialCode: true,
     utilsScript:
-      "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
+      "https://unpkg.com/intl-tel-input@25.3.0/build/js/utils.js"
   });
-
-  function initPhone() {
-  const input = document.querySelector("#phone");
-  if (!input) return;
-
-  if (input.dataset.intlInitialized) return;
-  input.dataset.intlInitialized = "true";
-
-  window.intlTelInput(input, {
-    initialCountry: "us",
-    separateDialCode: true,
-    utilsScript:
-      "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
-  });
-}
-
-document.addEventListener("DOMContentLoaded", initPhone);
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
