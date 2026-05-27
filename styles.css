@@ -1708,7 +1708,16 @@ background: #03030a;
   color: #aaa !important;
 }
 
+
+
 .iti {
   --iti-path-flags-1x: url("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/img/flags.webp");
   --iti-path-flags-2x: url("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/img/flags@2x.webp");
+}
+
+@media screen and (max-width: 768px) {
+  .iti {
+    --iti-path-flags-1x: url("https://unpkg.com/intl-tel-input@25.3.0/build/img/flags.webp");
+    --iti-path-flags-2x: url("https://unpkg.com/intl-tel-input@25.3.0/build/img/flags@2x.webp");
+  }
 }
