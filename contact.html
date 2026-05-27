@@ -25,7 +25,6 @@
 
 <link rel="stylesheet" href="https://unpkg.com/intl-tel-input@25.3.0/build/css/intlTelInput.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css">
-
 </head>
 <body>
     
@@ -233,14 +232,17 @@
 <script src="https://unpkg.com/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
 
 <script>
-  const input = document.querySelector("#phone");
+ const input = document.querySelector("#phone");
 
-  window.intlTelInput(input, {
-    initialCountry: "us",
-    separateDialCode: true,
-    utilsScript:
-      "https://unpkg.com/intl-tel-input@25.3.0/build/js/utils.js"
-  });
+window.intlTelInput(input, {
+  initialCountry: "auto",
+  separateDialCode: true,
+  geoIpLookup: function(callback) {
+    callback("us");
+  },
+  utilsScript:
+    "https://unpkg.com/intl-tel-input@25.3.0/build/js/utils.js"
+});
 </script>
 
 
