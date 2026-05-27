@@ -1709,10 +1709,3 @@ background: #03030a;
 .iti__search-input::placeholder {
   color: #aaa !important;
 }
-
-
-
-.iti {
-  --iti-path-flags-1x: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags.png");
-  --iti-path-flags-2x: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/img/flags@2x.png");
-}
