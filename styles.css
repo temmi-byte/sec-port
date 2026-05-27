@@ -1628,7 +1628,6 @@ background: #03030a;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
 }
 
 
@@ -1741,8 +1740,6 @@ background: #03030a;
   .iti__flag-container,
   .iti__selected-country {
     position: absolute !important;
-    z-index: 10;
-    overflow: visible;
   }
 }
 
