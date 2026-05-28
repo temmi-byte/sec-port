@@ -15,7 +15,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Start Your Project</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input/dist/css/intlTelInput.css">
 <link rel="stylesheet" href="contact.css">
 
     <link rel="stylesheet" href="styles.css" />
@@ -81,8 +81,8 @@
       </div>
 
       <div class="form-group">
+         <label for="phone">Phone Number</label>
         <div class="phone-field">
-  <label for="phone">Phone Number</label>
   <input
     id="phone"
     type="tel"
@@ -240,7 +240,7 @@
 
 <script src="script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input/dist/js/intlTelInput.min.js"></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -249,28 +249,25 @@
     const errorBox = document.querySelector("#phone-error");
 
     const iti = window.intlTelInput(input, {
-      initialCountry: "ng",
+      initialCountry: "us",
       countryOrder: ["ng", "us", "gb"],
       countrySearch: true,
       countrySelectorMode: "AUTO",
       separateDialCode: true,
       showFlags: true,
       dropdownParent: document.body,
-      hiddenInputs: () => ({
+      hiddenInputs: (telInputName) => ({
         phone: "full_phone",
         country: "country_iso2",
       }),
       loadUtils: () =>
-        import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js")
+        import("https://cdn.jsdelivr.net/npm/intl-tel-input/dist/js/utils.js")
     });
 
     form.addEventListener("submit", async (e) => {
       await iti.promise;
 
-      const fullNumber = iti.getNumber(); // E.164, e.g. +2348000000000
-      const valid = iti.isValidNumber();
-
-      if (!valid) {
+      if (!iti.isValidNumber()) {
         e.preventDefault();
         errorBox.textContent = "Enter a valid phone number for the selected country.";
         input.focus();
@@ -278,11 +275,10 @@
       }
 
       errorBox.textContent = "";
-      input.value = fullNumber;
+      input.value = iti.getNumber(); // E.164
     });
   });
 </script>
-
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
