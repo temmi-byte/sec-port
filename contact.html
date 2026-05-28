@@ -15,7 +15,9 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Start Your Project</title>
 
-    <link rel="stylesheet" href="contact.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+<link rel="stylesheet" href="contact.css">
+
     <link rel="stylesheet" href="styles.css" />
 
 
@@ -26,11 +28,6 @@
 
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-
-
-
-<!-- intl-tel-input CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
 
 </head>
 <body>
@@ -237,20 +234,23 @@
 </script>
 
 
-<!-- intl-tel-input JS -->
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/js/intlTelInput.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
 
 <script>
+window.addEventListener("load", function () {
+
   const input = document.querySelector("#phone");
 
   window.intlTelInput(input, {
-    initialCountry: "ng",
+    initialCountry: "us",
     separateDialCode: true,
     preferredCountries: ["ng", "us", "gb"],
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
+    autoPlaceholder: "polite",
+    utilsScript:
+      "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js"
   });
+
+});
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
