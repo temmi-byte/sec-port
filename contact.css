@@ -1,47 +1,107 @@
-.phone-wrapper {
+.phone-field {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
-.iti {
-  width: 100%;
+.phone-field label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 #phone {
   width: 100%;
   height: 55px;
-  padding-left: 52px;
+  padding: 0 16px 0 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
   color: #fff;
   font-size: 16px;
   outline: none;
+  box-sizing: border-box;
 }
 
 #phone::placeholder {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.iti__country-list {
-  background: #0b122e;
+.phone-error {
+  min-height: 1.2rem;
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+  color: #ff8a8a;
+}
+
+/* wrapper */
+.iti {
+  width: 100%;
+  display: block;
+}
+
+/* selected country button */
+.iti__selected-country {
+  background: transparent !important;
+}
+
+/* dial code beside the flag */
+.iti__selected-dial-code {
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* flags */
+.iti__flag {
+  border-radius: 2px;
+}
+
+/* dropdown list */
+.iti__country-list {
+  background: #0b1220 !important;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  max-height: 320px;
+}
+
+.iti__country {
+  padding: 10px 12px;
+}
+
+.iti__country:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.iti__country-name {
+  color: #fff;
+}
+
+.iti__dial-code {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* search box */
 .iti__search-input {
+  width: calc(100% - 24px) !important;
+  margin: 12px 12px 8px;
   background: #111 !important;
   color: #fff !important;
-  border: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 10px !important;
+  outline: none;
+  padding: 10px 12px;
+  box-sizing: border-box;
 }
 
 .iti__search-input::placeholder {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.45) !important;
 }
 
-.contact {
-  padding: 5rem 2rem;
-background: #03030a;
-   border-top: 1px solid rgba(45, 107, 221, 0.637);
+/* mobile spacing */
+@media (max-width: 768px) {
+  #phone {
+    height: 54px;
+  }
 }
 
 .contact-container {
