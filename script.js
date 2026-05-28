@@ -129,14 +129,16 @@ function sendReferralToWhatsApp(event) {
   event.preventDefault();
 
   const referrerName = document.getElementById("referrerName").value;
-  const referrerEmail = document.getElementById("referrerEmail").value;
+  const referrerNumber = document.getElementById("referrerNumber").value;
   const clientName = document.getElementById("clientName").value;
+  const clientEmail = document.getElementById("clientEmail").value;
   const clientBusiness = document.getElementById("clientBusiness").value;
   const clientContact = document.getElementById("clientContact").value;
+  const aboutBusiness = document.getElementById("aboutBusiness").value;
 
   const message = `Hello Temmie, I want to submit a referral:%0A
 Referrer Name: ${referrerName}%0A
-Referrer Number: ${referrerEmail}%0A
+Referrer Number: ${referrerNumber}%0A
 Client Name: ${clientName}%0A
 Client Email: ${clientEmail}%0A
 Client Business: ${clientBusiness}%0A
