@@ -136,10 +136,12 @@ function sendReferralToWhatsApp(event) {
 
   const message = `Hello Temmie, I want to submit a referral:%0A
 Referrer Name: ${referrerName}%0A
-Referrer Email: ${referrerEmail}%0A
+Referrer Number: ${referrerEmail}%0A
 Client Name: ${clientName}%0A
+Client Email: ${clientEmail}%0A
 Client Business: ${clientBusiness}%0A
-Client Contact: ${clientContact}`;
+Client Contact: ${clientContact}%0A
+About Business: ${aboutBusiness}`;
 
   const phoneNumber = "2348027715673";
 
@@ -158,3 +160,30 @@ window.addEventListener("scroll", () => {
     mobileNav.classList.remove("show");
   }
 });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((item) => item.classList.add("visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    items.forEach((item) => observer.observe(item));
+  });
