@@ -301,7 +301,7 @@ body {
 
   width: max-content;
 
-  animation: scrollStats 50s linear infinite;
+  animation: scrollStats 70s linear infinite;
 }
 
 .stat {
@@ -1581,11 +1581,21 @@ background: #03030a;
   outline: none;
 }
 
+
+.referral-form textarea {
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  outline: none;
+}
+
+
 .referral-form button {
   padding: 0.9rem 1rem;
   border: none;
   border-radius: 10px;
-  background: #4fc3f7;
+  background: #0235a3;
   color: #fff;
   cursor: pointer;
 }
@@ -1681,73 +1691,28 @@ background: #03030a;
 
 .iti {
   width: 100%;
-  display: block;
 }
 
-/* IMPORTANT: prevents mobile clipping */
-.iti__flag-container {
-  background: transparent !important;
-}
-
-/* dial code styling */
-.iti__selected-dial-code {
+#phone {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  background: rgba(255,255,255,0.08);
   color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
-/* dropdown list */
 .iti__country-list {
-  background: #0b122e !important;
+  background: #0b122e;
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.1);
-  max-height: 250px;
 }
 
-/* hover state */
-.iti__country:hover {
-  background-color: rgba(255,255,255,0.08);
-}
-
-/* search box inside dropdown */
 .iti__search-input {
-  background-color: #111 !important;
+  background: #111 !important;
   color: #fff !important;
-  border: 1px solid rgba(255,255,255,0.2) !important;
 }
 
-/* placeholder of search */
 .iti__search-input::placeholder {
-  color: rgba(255,255,255,0.5) !important;
-}
-
-/* =========================
-   MOBILE FIX (CRITICAL)
-========================= */
-
-@media (max-width: 768px) {
-
-  .iti {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  #phone {
-    width: 100% !important;
-    font-size: 16px !important;
-  }
-
-  /* prevent weird overlay issues */
-  .iti__country-container,
-  .iti__flag-container,
-  .iti__selected-country {
-    position: absolute !important;
-  }
-}
-
-/* =========================
-   FIX OVERFLOW ISSUES
-========================= */
-
-.form-group,
-.phone-wrapper {
-  overflow: visible !important;
+  color: rgba(255,255,255,0.5);
 }

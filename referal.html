@@ -51,10 +51,13 @@
 <div class="referral-form-container" id="referralForm">
   <form class="referral-form" onsubmit="sendReferralToWhatsApp(event)">
     <input type="text" id="referrerName" placeholder="Your Name" required>
-    <input type="email" id="referrerEmail" placeholder="Your Email" required>
-    <input type="text" id="clientName" placeholder="Client Name" required>
+    <input type="number" id="referrerNumber" placeholder="Your Number" required>
+    <input type="text" id="clientName" placeholder="Client's Name" required>
+    <input type="email" id="clientEmail" placeholder="Client's Email" required>
     <input type="text" id="clientBusiness" placeholder="Client Business Name" required>
     <input type="text" id="clientContact" placeholder="Client Contact" required>
+    <textarea id="aboutbusiness" rows="5"
+          placeholder="Briefly explain clients business" required></textarea>
     <button type="submit">Submit Referral</button>
   </form>
 </div>
