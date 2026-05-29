@@ -150,6 +150,8 @@ About Business: ${aboutBusiness}`;
   window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
 }
 
+
+
 const mobileNav = document.querySelector(".bottom-nav");
 const hero = document.querySelector(".hero");
 

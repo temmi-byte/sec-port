@@ -14,10 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Start Your Project</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input/dist/css/intlTelInput.css">
 <link rel="stylesheet" href="contact.css">
-
     <link rel="stylesheet" href="styles.css" />
 
 
@@ -79,21 +76,50 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="gracerobert@gmail.com" required>
       </div>
+      
 
-      <div class="form-group">
-         <label for="phone">Phone Number</label>
+       <div class="form-group">
+     
         <div class="phone-field">
-  <input
-    id="phone"
-    type="tel"
-    name="phone"
-    autocomplete="tel"
-    inputmode="tel"
-    placeholder="800 000 0000"
-  >
-  <div id="phone-error" class="phone-error" aria-live="polite"></div>
+  <label for="countrySearchBtn">Phone Number</label>
+
+  <div class="phone-group">
+    <button type="button" id="countrySearchBtn" class="country-btn">
+      <span class="country-btn-left">
+        <span id="selectedCountryEmoji" class="country-emoji">🇳🇬</span>
+        <span id="selectedCountryText">Nigeria (+234)</span>
+      </span>
+      <span class="chevron">▾</span>
+    </button>
+
+    <input
+      type="tel"
+      id="phoneLocal"
+      name="phone_local"
+      placeholder="Enter phone number"
+      inputmode="tel"
+      autocomplete="tel-national"
+    >
+  </div>
+
+  <input type="hidden" name="country" id="country">
+  <input type="hidden" name="phone" id="phoneFull">
+  <small id="phoneError" class="phone-error" aria-live="polite"></small>
+
+  <div id="countryDropdown" class="country-dropdown" hidden>
+    <div class="country-search-wrap">
+      <input
+        type="text"
+        id="countrySearchInput"
+        class="country-search"
+        placeholder="Search country or code"
+        autocomplete="off"
+      >
+    </div>
+    <div id="countryList" class="country-list"></div>
+  </div>
 </div>
-      </div>
+       </div>
 
       <div class="form-group">
         <label for="hear-about">How did you hear about us?</label>
@@ -240,47 +266,175 @@
 
 <script src="script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input/dist/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.12.25/bundle/libphonenumber-max.js"></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-    const input = document.querySelector("#phone");
-    const errorBox = document.querySelector("#phone-error");
+    const form = document.getElementById("contactForm");
+    const countryBtn = document.getElementById("countrySearchBtn");
+    const countryEmoji = document.getElementById("selectedCountryEmoji");
+    const countryText = document.getElementById("selectedCountryText");
+    const countryHidden = document.getElementById("country");
+    const phoneLocal = document.getElementById("phoneLocal");
+    const phoneFull = document.getElementById("phoneFull");
+    const phoneError = document.getElementById("phoneError");
+    const dropdown = document.getElementById("countryDropdown");
+    const searchInput = document.getElementById("countrySearchInput");
+    const countryList = document.getElementById("countryList");
 
-    const iti = window.intlTelInput(input, {
-      initialCountry: "us",
-      countryOrder: ["ng", "us", "gb"],
-      countrySearch: true,
-      countrySelectorMode: "AUTO",
-      separateDialCode: true,
-      showFlags: true,
-      dropdownParent: document.body,
-      hiddenInputs: (telInputName) => ({
-        phone: "full_phone",
-        country: "country_iso2",
-      }),
-      loadUtils: () =>
-        import("https://cdn.jsdelivr.net/npm/intl-tel-input/dist/js/utils.js")
+    const { getCountries, getCountryCallingCode, parsePhoneNumberFromString } = window.libphonenumber;
+
+    const preferredOrder = ["NG", "US", "GB", "GH", "ZA", "KE", "CA", "AU", "IN", "AE"];
+
+    const regionNames = (window.Intl && Intl.DisplayNames)
+      ? new Intl.DisplayNames(["en"], { type: "region" })
+      : null;
+
+    function nameFor(iso) {
+      return regionNames ? regionNames.of(iso) : iso;
+    }
+
+    function flagEmoji(iso) {
+      return iso
+        .toUpperCase()
+        .split("")
+        .map(char => 127397 + char.charCodeAt())
+        .map(code => String.fromCodePoint(code))
+        .join("");
+    }
+
+    const allCountries = getCountries();
+    const orderedCountries = [
+      ...preferredOrder.filter(c => allCountries.includes(c)),
+      ...allCountries.filter(c => !preferredOrder.includes(c))
+    ];
+
+    let selectedIso = "NG";
+
+    function countryLabel(iso) {
+      return `${nameFor(iso)} (+${getCountryCallingCode(iso)})`;
+    }
+
+    function setSelectedCountry(iso) {
+      selectedIso = iso;
+      countryHidden.value = selectedIso;
+      countryText.textContent = countryLabel(selectedIso);
+      countryEmoji.textContent = flagEmoji(selectedIso);
+    }
+
+    function renderCountries(filter = "") {
+      const q = filter.trim().toLowerCase();
+
+      const items = orderedCountries.filter(iso => {
+        const name = nameFor(iso).toLowerCase();
+        const code = `+${getCountryCallingCode(iso)}`;
+        const isoLower = iso.toLowerCase();
+        return (
+          !q ||
+          name.includes(q) ||
+          code.includes(q) ||
+          isoLower.includes(q)
+        );
+      });
+
+      countryList.innerHTML = items.map(iso => {
+        const code = `+${getCountryCallingCode(iso)}`;
+        const name = nameFor(iso);
+        const emoji = flagEmoji(iso);
+
+        return `
+          <button type="button" class="country-item" data-iso="${iso}">
+            <span class="left">
+              <span class="flag">${emoji}</span>
+              <span class="name">${name}</span>
+            </span>
+            <span class="code">${code}</span>
+          </button>
+        `;
+      }).join("");
+
+      countryList.querySelectorAll(".country-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+          setSelectedCountry(btn.dataset.iso);
+          dropdown.hidden = true;
+          phoneError.textContent = "";
+          phoneLocal.focus();
+        });
+      });
+    }
+
+    function openDropdown() {
+      dropdown.hidden = false;
+      searchInput.value = "";
+      renderCountries("");
+      searchInput.focus();
+    }
+
+    function closeDropdown() {
+      dropdown.hidden = true;
+    }
+
+    countryBtn.addEventListener("click", () => {
+      if (dropdown.hidden) openDropdown();
+      else closeDropdown();
     });
 
-    form.addEventListener("submit", async (e) => {
-      await iti.promise;
+    searchInput.addEventListener("input", () => {
+      renderCountries(searchInput.value);
+    });
 
-      if (!iti.isValidNumber()) {
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".phone-field")) closeDropdown();
+    });
+
+    function cleanNumber(value) {
+      return value.replace(/[^\d()+-]/g, "");
+    }
+
+    function validateAndBuild() {
+      const raw = phoneLocal.value.trim();
+
+      if (!raw) {
+        return { valid: false, message: "Enter a phone number." };
+      }
+
+      const parsed = parsePhoneNumberFromString(cleanNumber(raw), selectedIso);
+
+      if (!parsed || !parsed.isValid()) {
+        return {
+          valid: false,
+          message: `Enter a valid ${nameFor(selectedIso)} number.`
+        };
+      }
+
+      return {
+        valid: true,
+        e164: parsed.number
+      };
+    }
+
+    setSelectedCountry(selectedIso);
+    renderCountries("");
+
+    phoneLocal.addEventListener("input", () => {
+      phoneLocal.value = phoneLocal.value.replace(/[^\d\s()+-]/g, "");
+    });
+
+    form.addEventListener("submit", (e) => {
+      const result = validateAndBuild();
+
+      if (!result.valid) {
         e.preventDefault();
-        errorBox.textContent = "Enter a valid phone number for the selected country.";
-        input.focus();
+        phoneError.textContent = result.message;
+        phoneLocal.focus();
         return;
       }
 
-      errorBox.textContent = "";
-      input.value = iti.getNumber(); // E.164
+      phoneError.textContent = "";
+      phoneFull.value = result.e164;
+      countryHidden.value = selectedIso;
     });
   });
-</script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
