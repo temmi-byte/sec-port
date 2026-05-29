@@ -103,6 +103,7 @@
       placeholder="Enter phone number"
       inputmode="tel"
       autocomplete="tel-national"
+      required
     >
   </div>
 
@@ -128,7 +129,7 @@
 
       <div class="form-group">
         <label for="hear-about">How did you hear about us?</label>
-        <select id="hear-about" name="hear-about-us">
+        <select id="hear-about" name="hear-about-us" required>
            <option>Select Option</option>
           <option>Referal</option>
           <option>X</option>
@@ -153,6 +154,20 @@
       </div>
 
        <div class="form-group">
+        <label for="industry">Industry</label>
+        <select id="industry" name="industry" required>
+          <option>Select Option </option>
+           <option>Fashion </option>
+          <option>Real Estate</option>
+          <option>Hospitality</option>
+          <option>Finance</option>
+           <option>Tech</option>
+            <option>Health Care</option>
+             <option>Other</option>
+        </select>
+      </div>
+
+       <div class="form-group">
         <label for="link">Current Website URL (if any)</label>
         <input type="link" id="website-link" name="website-link" placeholder="https://yourwebsite.com">
       </div>
@@ -165,7 +180,7 @@
 
        <div class="form-group">
         <label for="hear-about">How long has your business been operating?</label>
-        <select id="business-timeframe" name="business-timeframe">
+        <select id="business-timeframe" name="business-timeframe" required>
            <option>Select duration</option>
           <option>Less than a year</option>
           <option>1-2 years</option>
@@ -185,7 +200,7 @@
 
       <div class="form-group">
         <label for="project">What kind of service are you interested in?</label>
-        <select id="project" name="project">
+        <select id="project" name="project" required>
            <option>Select Option</option>
            <option>Business website</option>
           <option>Google Business Profile</option>
@@ -193,11 +208,6 @@
            <option>Landing page</option>
           <option>Personal portfolio</option>
            <option>Custom website</option>
-           <option>Ticketing Website</option>
-          <option>Web3 landing page</option>
-          <option>dApp Frontend UI</option>
-          <option>Fintech Website</option>
-          <option>SaaS Website</option>
         </select>
       </div>
 
@@ -208,7 +218,7 @@
 
        <div class="form-group">
         <label for="when-ready">When will you be ready to start?</label>
-        <select id="when-ready" name="when-ready">
+        <select id="when-ready" name="when-ready" required>
            <option>Select Option</option>
           <option>I want to get started immediately</option>
           <option>I am planning to, i just need info, so i can book in 1-3 months later</option>
