@@ -70,20 +70,7 @@
   color: rgba(228, 232, 238, 0.6);
 }
 
-.btn-primary {
-  margin-top: 1rem;
-  background: #6ea8ff;
-  color: #0b1c2d;
-  border: none;
-  padding: 0.9rem 1.5rem;
-  font-size: 0.9rem;
-  border-radius: 30px;
-  cursor: pointer;
-}
 
-.btn-primary:hover {
-  opacity: 0.9;
-}
 
 .form-group select {
   color: #fff;
@@ -173,7 +160,7 @@
   color: #fff;
   font-size: 16px;
   padding: 0 14px;
-  height: 56px;
+  height: 96px;
   box-sizing: border-box;
 }
 
@@ -191,7 +178,7 @@
 
 .country-dropdown {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 2px);
   left: 0;
   width: min(560px, 100%);
   z-index: 50;
@@ -200,6 +187,7 @@
   background: #08111f;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.42);
+  margin-top: 0%;
 }
 
 .country-search-wrap {
@@ -219,7 +207,6 @@
   padding: 0 14px;
   box-sizing: border-box;
   font-size: 15px;
-   margin-top: 0%;
 }
 
 .country-search::placeholder {
@@ -302,4 +289,72 @@
   .country-dropdown {
     width: 100%;
   }
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-progress-wrap {
+  margin-bottom: 1.8rem;
+}
+
+.form-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.form-progress {
+  width: 33.33%;
+  height: 100%;
+  background: linear-gradient(90deg, #4fc3f7, #6ea8ff);
+  border-radius: inherit;
+  transition: width 0.35s ease;
+}
+
+.step-counter {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
+
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.first-step {
+  justify-content: flex-end;
+}
+
+.prev-btn,
+.next-btn,
+.submit-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.9rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.prev-btn {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.next-btn,
+.submit-btn {
+  background: #6ea8ff;
+  color: #0b1c2d;
 }
