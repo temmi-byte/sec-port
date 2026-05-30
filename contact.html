@@ -482,11 +482,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
   nextBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      if (currentStep < steps.length - 1) {
-        currentStep++;
-        showStep(currentStep);
-      }
-    });
+
+  const currentFields =
+    steps[currentStep].querySelectorAll(
+      "input[required], select[required], textarea[required]"
+    );
+
+  let valid = true;
+
+  currentFields.forEach(field => {
+
+    if (!field.value.trim()) {
+
+      valid = false;
+
+      field.style.border =
+        "1px solid red";
+
+    } else {
+
+      field.style.border = "";
+
+    }
+
+  });
+
+  if (!valid) {
+    alert("Please complete all required fields.");
+    return;
+  }
+
+  if (currentStep < steps.length - 1) {
+
+    currentStep++;
+
+    showStep(currentStep);
+
+  }
+
+});
   });
 
   prevBtns.forEach(btn => {
