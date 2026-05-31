@@ -299,27 +299,6 @@
   font-weight: 500;
 }
 
-@media (max-width: 600px) {
-
-  .country-btn {
-    width: 120px;
-    flex: 0 0 120px;
-    padding: 0 5px;
-  }
-
-  .country-btn-left {
-    gap: 4px;
-  }
-
-  .country-emoji {
-    font-size: 1rem;
-  }
-
-  #selectedCountryText {
-    font-size: 10px;
-  }
-
-}
 
 .form-step {
   display: none;
