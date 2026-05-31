@@ -302,12 +302,21 @@
 @media (max-width: 600px) {
 
   .country-btn {
-    width: 95px;
-    flex: 0 0 95px;
+    width: 120px;
+    flex: 0 0 120px;
+    padding: 0 8px;
   }
 
-  #phoneLocal {
-    font-size: 16px;
+  .country-btn-left {
+    gap: 4px;
+  }
+
+  .country-emoji {
+    font-size: 1rem;
+  }
+
+  #selectedCountryText {
+    font-size: 12px;
   }
 
 }
