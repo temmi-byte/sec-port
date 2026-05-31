@@ -299,6 +299,14 @@
   font-weight: 500;
 }
 
+@media (max-width: 600px) {
+
+  .country-btn {
+    width: 110px;
+    flex: 0 0 110px;
+  }
+
+}
 
 .form-step {
   display: none;
