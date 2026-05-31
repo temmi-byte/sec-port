@@ -303,7 +303,7 @@
 
   .country-btn {
     width: 140px;
-    flex: 5px 0 30px;
+    flex: 0 0 30px;
   }
 
 }
