@@ -349,6 +349,11 @@ function setSelectedCountry(iso) {
 
   countryText.textContent =
     "+" + getCountryCallingCode(selectedIso);
+
+    console.log(
+  countryEmoji.textContent,
+  countryText.textContent
+);
 }
     function renderCountries(filter = "") {
       const q = filter.trim().toLowerCase();
