@@ -340,11 +340,14 @@
 }
 
     function setSelectedCountry(iso) {
-      selectedIso = iso;
-      countryHidden.value = selectedIso;
-      countryText.textContent = countryLabel(selectedIso);
-      countryEmoji.textContent = flagEmoji(selectedIso);
-    }
+  selectedIso = iso;
+  countryHidden.value = selectedIso;
+
+  countryEmoji.textContent = flagEmoji(selectedIso);
+
+  countryText.textContent =
+    "+" + getCountryCallingCode(selectedIso);
+}
 
     function renderCountries(filter = "") {
       const q = filter.trim().toLowerCase();

@@ -142,11 +142,14 @@
 .country-btn-left {
   display: flex;
   align-items: center;
-  gap: 5px;
-  flex: 1;
-  min-width: 0;
+  gap: 6px;
+  overflow: hidden;
 }
 
+#selectedCountryText {
+  white-space: nowrap;
+  font-size: 12px;
+}
 
 .country-emoji {
   display: inline-flex;
@@ -156,11 +159,6 @@
   flex: 0 0 auto;
   font-size: 1rem;
   line-height: 1;
-}
-
-#selectedCountryText {
-  white-space: nowrap;
-  font-size: 12px;
 }
 
 .chevron {
