@@ -302,8 +302,8 @@
 @media (max-width: 600px) {
 
   .country-btn {
-    width: 100px;
-    flex: 0 0 30px;
+    width: 110px;
+    flex: 0 0 20px;
   }
 
 }
