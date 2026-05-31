@@ -213,12 +213,12 @@
 
       <div class="form-group">
         <label for="budget">What is your budget?</label>
-        <input type="words" id="budget" name="budget" placeholder="$500, $3000, Or NGN Equivalent" required>
+        <input type="words" id="budget" name="budget" placeholder="$500, $3000, Or Your Currency Equivalent" required>
       </div>
 
        <div class="form-group">
         <label for="when-ready">When will you be ready to start?</label>
-        <select id="when-ready" name="when-ready" required>
+        <select id="when-ready" name="when-ready"  required>
            <option>Select Option</option>
           <option>I want to get started immediately</option>
           <option>I am planning to, i just need info, so i can book in 1-3 months later</option>
@@ -336,8 +336,8 @@
     let selectedIso = "NG";
 
     function countryLabel(iso) {
-      return `${nameFor(iso)} (+${getCountryCallingCode(iso)})`;
-    }
+  return `+${getCountryCallingCode(iso)}`;
+}
 
     function setSelectedCountry(iso) {
       selectedIso = iso;
