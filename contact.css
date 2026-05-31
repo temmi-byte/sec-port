@@ -117,28 +117,19 @@
 }
 
 .country-btn {
-  width: 110px;
-  flex: 0 0 110px;
-
+  width: 90px;
+  flex: 0 0 90px;
   height: 56px;
-
   border: 0;
   outline: none;
-
   background: rgba(255,255,255,0.03);
-
   color: #fff;
-
   font-size: 13px;
-
   padding: 0 12px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   cursor: pointer;
-
   border-right: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -146,12 +137,13 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
+
 .country-btn-left {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  min-width: 0;
+  gap: 8px;
 }
+
 
 .country-emoji {
   font-size: 1.05rem;
