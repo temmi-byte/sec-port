@@ -339,8 +339,10 @@
   return `+${getCountryCallingCode(iso)}`;
 }
 
-    function setSelectedCountry(iso) {
+
+function setSelectedCountry(iso) {
   selectedIso = iso;
+
   countryHidden.value = selectedIso;
 
   countryEmoji.textContent = flagEmoji(selectedIso);
@@ -348,7 +350,6 @@
   countryText.textContent =
     "+" + getCountryCallingCode(selectedIso);
 }
-
     function renderCountries(filter = "") {
       const q = filter.trim().toLowerCase();
 
