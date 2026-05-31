@@ -304,6 +304,8 @@
   .country-btn {
     width: 140px;
     flex: 0 0 30px;
+    align-items: center;
+  justify-content: flex-start;
   }
 
 }
