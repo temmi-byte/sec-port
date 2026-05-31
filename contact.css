@@ -304,7 +304,7 @@
   .country-btn {
     width: 120px;
     flex: 0 0 120px;
-    padding: 0 8px;
+    padding: 0 5px;
   }
 
   .country-btn-left {
@@ -316,7 +316,7 @@
   }
 
   #selectedCountryText {
-    font-size: 12px;
+    font-size: 10px;
   }
 
 }
