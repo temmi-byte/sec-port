@@ -303,7 +303,7 @@
 
   .country-btn {
     width: 140px;
-    flex: 0 0 40px;
+    flex: 0 0 100px;
     align-items: center;
   justify-content: flex-start;
   padding-left: 8px;
