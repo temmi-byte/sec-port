@@ -378,3 +378,13 @@
   background: #6ea8ff;
   color: #0b1c2d;
 }
+
+
+.invalid-field {
+  border: 1px solid #ff4d4d !important;
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+.phone-group.invalid-field {
+  border: 1px solid #ff4d4d !important;
+}

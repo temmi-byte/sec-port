@@ -67,13 +67,8 @@
       <h5>How can we reach you?</h5>
 
       <div class="form-group">
-        <label for="name">First Name</label>
-        <input type="text" id="first-name" name="first-name" placeholder="e.g Grace" required>
-      </div>
-
-       <div class="form-group">
-        <label for="name">Last Name</label>
-        <input type="text" id="last-name" name="last-name" placeholder="e.g Robert" required>
+        <label for="name">Your Full Name</label>
+        <input type="text" id="first-name" name="full-name" placeholder="e.g Grace Robert" required>
       </div>
 
       <div class="form-group">
@@ -130,16 +125,16 @@
       <div class="form-group">
         <label for="hear-about">How did you hear about us?</label>
         <select id="hear-about" name="hear-about-us" required>
-           <option>Select Option</option>
+           <option value="" selected disabled>Select Option</option>
           <option>Referal</option>
+           <option>Google search</option>
           <option>X</option>
           <option>Instagram</option>
            <option>LinkedIn</option>
-          <option>Google search</option>
         </select>
       </div>
       <div class="step-buttons first-step">
-  <button type="button" class="next-btn">Next</button>
+  <button type="button" class="next-btn">Continue</button>
 </div>
      </div>
 
@@ -156,7 +151,7 @@
        <div class="form-group">
         <label for="industry">Industry</label>
         <select id="industry" name="industry" required>
-          <option>Select Option </option>
+          <option value="" selected disabled>Select Industry</option>
            <option>Fashion </option>
           <option>Real Estate</option>
           <option>Hospitality</option>
@@ -181,7 +176,7 @@
        <div class="form-group">
         <label for="hear-about">How long has your business been operating?</label>
         <select id="business-timeframe" name="business-timeframe" required>
-           <option>Select duration</option>
+           <option value="" selected disabled>Select duration</option>
           <option>Less than a year</option>
           <option>1-2 years</option>
           <option>3-5 years</option>
@@ -190,7 +185,7 @@
       </div>
       <div class="step-buttons">
   <button type="button" class="prev-btn">Previous</button>
-  <button type="button" class="next-btn">Next</button>
+  <button type="button" class="next-btn">Continue</button>
 </div>
        </div>
 
@@ -201,40 +196,45 @@
       <div class="form-group">
         <label for="project">What kind of service are you interested in?</label>
         <select id="project" name="project" required>
-           <option>Select Option</option>
-           <option>Business website</option>
+           <option value="" selected disabled>Select Service</option>
+           <option>Business Website Development</option>
+            <option>E-commerce Website Development</option>
+            <option>Personal Portfolio Website</option>
+           <option>Custom Website Design</option>
+           <option>Website Redesign</option>
           <option>Google Business Profile</option>
-          <option>E-commerce website</option>
-           <option>Landing page</option>
-          <option>Personal portfolio</option>
-           <option>Custom website</option>
+          <option>SEO & Performance</option>
+           <option>Brand & Identity</option>
+           <option>Marketing Strategy</option>
+             <option>Other</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="budget">What is your budget?</label>
-        <input type="words" id="budget" name="budget" placeholder="$500, $3000, Or Your Currency Equivalent" required>
+        <input type="words" id="budget" name="budget" placeholder="$500, $3000, Or Equivalent To Your Currency" required>
       </div>
 
        <div class="form-group">
         <label for="when-ready">When will you be ready to start?</label>
         <select id="when-ready" name="when-ready"  required>
-           <option>Select Option</option>
+           <option value="" selected disabled>Select Option</option>
           <option>I want to get started immediately</option>
           <option>I am planning to, i just need info, so i can book in 1-3 months later</option>
           <option>I am not yet ready</option>
         </select>
       </div>
 
+      
       <div class="form-group">
-        <label for="message">How can a new or redesigned website help you acheive your goals?</label>
+        <label for="message">How can our services help you acheive your goals? Tell us more!</label>
         <textarea id="message" name="message" rows="5"
           placeholder="Explain in detail what you need" required></textarea>
       </div>
 
       <div class="step-buttons">
   <button type="button" class="prev-btn">Previous</button>
-   <button type="submit" class="submit-btn"> Send message </button>
+   <button type="submit" class="submit-btn"> Submit Info </button>
 </div>
 
       
@@ -308,7 +308,7 @@
 
     const { getCountries, getCountryCallingCode, parsePhoneNumberFromString } = window.libphonenumber;
 
-    const preferredOrder = ["NG", "US", "GB", "GH", "ZA", "KE", "CA", "AU", "IN", "AE"];
+    const preferredOrder = ["US", "GB", "NG", "GH", "ZA", "KE", "CA", "AU", "IN", "AE"];
 
     const regionNames = (window.Intl && Intl.DisplayNames)
       ? new Intl.DisplayNames(["en"], { type: "region" })
@@ -333,7 +333,7 @@
       ...allCountries.filter(c => !preferredOrder.includes(c))
     ];
 
-    let selectedIso = "NG";
+    let selectedIso = "US";
 
     function countryLabel(iso) {
   return `+${getCountryCallingCode(iso)}`;
@@ -478,6 +478,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const progressBar = document.querySelector(".form-progress");
   const currentStepText = document.getElementById("currentStep");
 
+  const form = document.getElementById("contactForm");
+
+  const phoneLocal = document.getElementById("phoneLocal");
+  const phoneError = document.getElementById("phoneError");
+  const phoneFull = document.getElementById("phoneFull");
+  const countryHidden = document.getElementById("country");
+  const phoneGroup = document.querySelector(".phone-group");
+
+  const lib = window.libphonenumber || {};
+  const parsePhoneNumberFromString = lib.parsePhoneNumberFromString;
+
   let currentStep = 0;
 
   function showStep(index) {
@@ -485,58 +496,180 @@ document.addEventListener("DOMContentLoaded", () => {
       step.classList.toggle("active", i === index);
     });
 
-    currentStepText.textContent = index + 1;
-    progressBar.style.width = `${((index + 1) / steps.length) * 100}%`;
-  }
-
-  nextBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-
-  const currentFields =
-    steps[currentStep].querySelectorAll(
-      "input[required], select[required], textarea[required]"
-    );
-
-  let valid = true;
-
-  currentFields.forEach(field => {
-
-    if (!field.value.trim()) {
-
-      valid = false;
-
-      field.style.border =
-        "1px solid red";
-
-    } else {
-
-      field.style.border = "";
-
+    if (currentStepText) {
+      currentStepText.textContent = index + 1;
     }
 
-  });
-
-  if (!valid) {
-    alert("Please complete all required fields.");
-    return;
+    if (progressBar) {
+      progressBar.style.width = `${((index + 1) / steps.length) * 100}%`;
+    }
   }
 
-  if (currentStep < steps.length - 1) {
-
-    currentStep++;
-
-    showStep(currentStep);
-
+  function setInvalid(field, isInvalid) {
+    if (!field) return;
+    field.classList.toggle("invalid-field", isInvalid);
   }
 
-});
+  function isPlaceholderSelect(selectEl) {
+    if (!selectEl || selectEl.tagName !== "SELECT") return false;
+    if (!selectEl.required) return false;
+
+    const selectedOption = selectEl.options[selectEl.selectedIndex];
+    if (!selectedOption) return true;
+
+    const text = (selectedOption.textContent || "").trim().toLowerCase();
+    const value = (selectedOption.value || "").trim().toLowerCase();
+
+    return (
+      selectEl.selectedIndex === 0 &&
+      (value === "" || text.startsWith("select"))
+    );
+  }
+
+  function validatePhoneNow() {
+    if (!phoneLocal) {
+      return { valid: true };
+    }
+
+    const raw = phoneLocal.value.trim();
+    if (!raw) {
+      return { valid: false, message: "Enter a phone number." };
+    }
+
+    if (typeof parsePhoneNumberFromString !== "function") {
+      return { valid: false, message: "Phone validation is not ready yet." };
+    }
+
+    const selectedIso = countryHidden && countryHidden.value ? countryHidden.value : "NG";
+    const normalized = raw.replace(/[^\d()+-]/g, "");
+    const parsed = parsePhoneNumberFromString(normalized, selectedIso);
+
+    if (!parsed || !parsed.isValid()) {
+      return {
+        valid: false,
+        message: `Enter a valid phone number for ${selectedIso}.`
+      };
+    }
+
+    return {
+      valid: true,
+      e164: parsed.number
+    };
+  }
+
+  function validateCurrentStep() {
+    const currentStepElement = steps[currentStep];
+    const fields = currentStepElement.querySelectorAll("input, select, textarea");
+
+    let valid = true;
+    let firstInvalid = null;
+
+    fields.forEach((field) => {
+      if (field.type === "hidden" || field.disabled) return;
+
+      if (field === phoneLocal) return;
+
+      let fieldValid = true;
+
+      if (field.tagName === "SELECT" && isPlaceholderSelect(field)) {
+        fieldValid = false;
+      } else if (!field.checkValidity()) {
+        fieldValid = false;
+      }
+
+      setInvalid(field, !fieldValid);
+
+      if (!fieldValid) {
+        valid = false;
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    if (currentStepElement.contains(phoneLocal)) {
+      const result = validatePhoneNow();
+
+      if (!result.valid) {
+        valid = false;
+        phoneError.textContent = result.message;
+        setInvalid(phoneLocal, true);
+        if (phoneGroup) phoneGroup.classList.add("invalid-field");
+        if (!firstInvalid) firstInvalid = phoneLocal;
+      } else {
+        phoneError.textContent = "";
+        setInvalid(phoneLocal, false);
+        if (phoneGroup) phoneGroup.classList.remove("invalid-field");
+
+        if (phoneFull && result.e164) {
+          phoneFull.value = result.e164;
+        }
+
+        if (countryHidden && !countryHidden.value) {
+          countryHidden.value = "NG";
+        }
+      }
+    }
+
+    if (!valid && firstInvalid) {
+      firstInvalid.focus();
+    }
+
+    return valid;
+  }
+
+  nextBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (!validateCurrentStep()) return;
+
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
   });
 
-  prevBtns.forEach(btn => {
+  prevBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (currentStep > 0) {
         currentStep--;
         showStep(currentStep);
+      }
+    });
+  });
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      if (!validateCurrentStep()) {
+        e.preventDefault();
+        return;
+      }
+
+      if (phoneLocal) {
+        const result = validatePhoneNow();
+        if (!result.valid) {
+          e.preventDefault();
+          phoneError.textContent = result.message;
+          setInvalid(phoneLocal, true);
+          if (phoneGroup) phoneGroup.classList.add("invalid-field");
+          phoneLocal.focus();
+          return;
+        }
+
+        if (phoneFull && result.e164) {
+          phoneFull.value = result.e164;
+        }
+      }
+    });
+  }
+
+  document.querySelectorAll("input, select, textarea").forEach((field) => {
+    const eventName = field.tagName === "SELECT" ? "change" : "input";
+
+    field.addEventListener(eventName, () => {
+      setInvalid(field, false);
+
+      if (field === phoneLocal) {
+        phoneError.textContent = "";
+        if (phoneGroup) phoneGroup.classList.remove("invalid-field");
       }
     });
   });
