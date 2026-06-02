@@ -8,7 +8,7 @@
 
   const typingSpeed = 50;
   const deletingSpeed = 60;
-  const delayBetween = 2000;
+  const delayBetween = 3000;
 
   const typingElement = document.getElementById("typing-text");
 
@@ -129,20 +129,16 @@ function sendReferralToWhatsApp(event) {
   event.preventDefault();
 
   const referrerName = document.getElementById("referrerName").value;
-  const referrerNumber = document.getElementById("referrerNumber").value;
   const clientName = document.getElementById("clientName").value;
-  const clientEmail = document.getElementById("clientEmail").value;
-  const clientBusiness = document.getElementById("clientBusiness").value;
   const clientContact = document.getElementById("clientContact").value;
+  const clientBusiness = document.getElementById("clientBusiness").value;
   const aboutBusiness = document.getElementById("aboutBusiness").value;
 
-  const message = `Hello Temmie, I want to submit a referral:%0A
+  const message = `Hii Temmie, I want to submit a referral:%0A
 Referrer Name: ${referrerName}%0A
-Referrer Number: ${referrerNumber}%0A
 Client Name: ${clientName}%0A
-Client Email: ${clientEmail}%0A
-Client Business: ${clientBusiness}%0A
 Client Contact: ${clientContact}%0A
+Client Business: ${clientBusiness}%0A
 About Business: ${aboutBusiness}`;
 
   const phoneNumber = "2348027715673";
