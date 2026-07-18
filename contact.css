@@ -1,6 +1,6 @@
 
 .contact-container {
-  max-width: 500px;
+  max-width: 450px;
   margin: auto;
 }
 
@@ -26,9 +26,14 @@
   align-items: center;
 }
 
+.contact p {
+  font-size: smaller;
+}
+
 .h-h {
   align-items: center;
 }
+
 
 
 
@@ -45,6 +50,17 @@
   border-radius: 22px;
   border: 1px solid rgba(79, 117, 243, 0.274);
   margin-bottom: 22px;
+}
+
+.note {
+  background: rgba(3, 3, 3, 0.493);
+  backdrop-filter: blur(16px);
+  padding: 0.8rem;
+  border-radius: 22px;
+  border: 1px solid rgba(37, 86, 247, 0.747);
+  margin-bottom: 22px;
+   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .form-group {
@@ -381,7 +397,7 @@
 
 .next-btn,
 .submit-btn {
-  background: #6ea8ff;
+  background: #176ff3;
   color: #0b1c2d;
 }
 
